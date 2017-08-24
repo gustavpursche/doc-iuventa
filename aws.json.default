@@ -1,0 +1,14 @@
+{
+  "s3": {
+    "region": "",
+    "params": {
+      "Bucket": "",
+      "signatureVersion": "v4"
+    },
+    "accessKeyId": "",
+    "secretAccessKey": ""
+  },
+  "cloudfront": {
+    "distributionId": ""
+  }
+}
