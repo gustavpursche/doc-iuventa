@@ -22,6 +22,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const webpack = require('webpack');
 
+const S3_PATH = '/iuventa/dist/';
 const ENV = process.env.ENV || 'dev';
 const s3Config = require('./aws.json').s3;
 const cloudfrontConfig = {
@@ -31,7 +32,7 @@ const cloudfrontConfig = {
   bucket: s3Config.bucket,
   distribution: require('./aws.json').cloudfront.distributionId,
   paths: [
-    '/state-of-exception/dist/*',
+    `${S3_PATH}*`,
   ],
 };
 const IMAGE_SIZES = [ 400, 600, 800, 1200, 1400, 1800, 2000 ];
@@ -39,7 +40,7 @@ const IMAGE_SIZES = [ 400, 600, 800, 1200, 1400, 1800, 2000 ];
 let ASSET_PATH = '/dist/assets';
 
 if (ENV === 'production') {
-  ASSET_PATH = '[TBD]';
+  ASSET_PATH = `https://cdn.jib-collective.net${S3_PATH}assets`;
 }
 
 gulp.task('markup', () => {
@@ -197,7 +198,7 @@ gulp.task('upload', ['build', ], () => {
     './dist/**/**/*',
   ])
     .pipe(rename((path) => {
-        path.dirname = `/state-of-exception/dist/${path.dirname}`;
+        path.dirname = `${S3_PATH}${path.dirname}`;
         return path;
     }))
     .pipe(gulpIf(gzippable, awspublish.gzip()))

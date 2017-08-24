@@ -59,4 +59,6 @@ typings/
 
 # project related
 aws.json
+dist/*
+.awspublish-jib-cdn
 
