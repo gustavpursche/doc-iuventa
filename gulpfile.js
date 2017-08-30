@@ -24,10 +24,12 @@ const webpack = require('webpack');
 
 const S3_PATH = '/iuventa/dist/';
 const ENV = process.env.ENV || 'dev';
+let s3Config;
+
 try {
-  const s3Config = require('./aws.json').s3;
+  s3Config = require('./aws.json').s3;
 } catch(err) {
-  const s3Config = {
+  s3Config = {
     s3: {
       region: process.env.S3_REGION,
       params: {
