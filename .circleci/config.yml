@@ -20,4 +20,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - deploy: npm run publish
+      - deploy:
+          command: |
+            npm run publish
