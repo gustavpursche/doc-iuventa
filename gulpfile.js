@@ -24,34 +24,34 @@ const webpack = require('webpack');
 
 const S3_PATH = '/iuventa/dist/';
 const ENV = process.env.ENV || 'dev';
-let s3Config;
+let awsConfig;
 
 try {
-  s3Config = require('./aws.json').s3;
+  awsConfig = require('./aws.json');
 } catch(err) {
-  s3Config = {
-    "s3": {
-      "region": process.env.S3_REGION,
-      "params": {
-        "Bucket": process.env.S3_PARAMS_BUCKET,
-        "signatureVersion": process.env.S3_PARAMS_SIGNATUREVERSION,
+  awsConfig = {
+    s3: {
+      region: process.env.S3_REGION,
+      params: {
+        Bucket: process.env.S3_PARAMS_BUCKET,
+        signatureVersion: process.env.S3_PARAMS_SIGNATUREVERSION,
       },
-      "accessKeyId": process.env.S3_ACCESSKEYID,
-      "secretAccessKey": process.env.S3_SECRETACCESSKEY,
+      accessKeyId: process.env.S3_ACCESSKEYID,
+      secretAccessKey: process.env.S3_SECRETACCESSKEY,
     },
 
-    "cloudfront": {
-      "distributionId": process.env.CLOUDFRONT_DISTRIBUTIONID,
+    cloudfront: {
+      distributionId: process.env.CLOUDFRONT_DISTRIBUTIONID,
     }
   };
 }
 
 const cloudfrontConfig = {
-  accessKeyId: s3Config.accessKeyId,
-  secretAccessKey: s3Config.secretAccessKey,
-  region: s3Config.region,
-  bucket: s3Config.bucket,
-  distribution: s3Config.cloudfront.distributionId,
+  accessKeyId: awsConfig.s3.accessKeyId,
+  secretAccessKey: awsConfig.s3.secretAccessKey,
+  region: awsConfig.s3.region,
+  bucket: awsConfig.s3.bucket,
+  distribution: awsConfig.cloudfront.distributionId,
   paths: [
     `${S3_PATH}*`,
   ],
@@ -205,8 +205,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('upload', ['build', ], () => {
-  console.log('******* ----', s3Config);
-  let publisher = awspublish.create(s3Config);
+  let publisher = awspublish.create(awsConfig.s3);
   const cacheTime = (60 * 60 * 24) * 14; // 14 days
   const awsHeaders = {
     'Cache-Control': `public, max-age=${cacheTime}, s-maxage=${cacheTime}`,
