@@ -24,7 +24,26 @@ const webpack = require('webpack');
 
 const S3_PATH = '/iuventa/dist/';
 const ENV = process.env.ENV || 'dev';
-const s3Config = require('./aws.json').s3;
+try {
+  const s3Config = require('./aws.json').s3;
+} catch(err) {
+  const s3Config = {
+    s3: {
+      region: process.env.S3_REGION,
+      params: {
+        Bucket: process.env.S3_PARAMS_BUCKET,
+        signatureVersion: process.env.S3_PARAMS_SIGNATUREVERSION,
+      },
+      accessKeyId: process.env.S3_ACCESSKEYID,
+      secretAccessKey: process.env.S3_SECRETACCESSKEY,
+    },
+
+    cloudfront: {
+      distributionId: process.env.CLOUDFRONT_DISTRIBUTIONID,
+    }
+  };
+}
+
 const cloudfrontConfig = {
   accessKeyId: s3Config.accessKeyId,
   secretAccessKey: s3Config.secretAccessKey,
