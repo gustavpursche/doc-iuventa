@@ -16,7 +16,7 @@ jobs:
           - v1-dependencies-
       - run:
           command: |
-            apt-get install imagemagick
+            sudo apt-get install imagemagick
       - run: npm install
       - save_cache:
           paths:
