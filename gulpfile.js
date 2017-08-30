@@ -205,6 +205,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('upload', ['build', ], () => {
+  console.log('******* ----', s3Config);
   let publisher = awspublish.create(s3Config);
   const cacheTime = (60 * 60 * 24) * 14; // 14 days
   const awsHeaders = {
