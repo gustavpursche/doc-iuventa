@@ -51,7 +51,7 @@ const cloudfrontConfig = {
   secretAccessKey: s3Config.secretAccessKey,
   region: s3Config.region,
   bucket: s3Config.bucket,
-  distribution: require('./aws.json').cloudfront.distributionId,
+  distribution: s3Config.cloudfront.distributionId,
   paths: [
     `${S3_PATH}*`,
   ],
