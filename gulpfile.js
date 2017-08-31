@@ -53,7 +53,7 @@ const cloudfrontConfig = {
   bucket: awsConfig.s3.bucket,
   distribution: awsConfig.cloudfront.distributionId,
   paths: [
-    `${S3_PATH}*`,
+    `/*`,
   ],
 };
 const IMAGE_SIZES = [ 400, 600, 800, 1200, 1400, 1800, 2000 ];
@@ -61,7 +61,7 @@ const IMAGE_SIZES = [ 400, 600, 800, 1200, 1400, 1800, 2000 ];
 let ASSET_PATH = '/dist/assets';
 
 if (ENV === 'production') {
-  ASSET_PATH = `https://cdn.jib-collective.net${S3_PATH}assets`;
+  ASSET_PATH = `/assets`;
 }
 
 gulp.task('markup', () => {
