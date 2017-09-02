@@ -1,0 +1,19 @@
+.quote {
+  font-family: $font-family-sans-serif;
+
+  &__author {
+    font-style: italic;
+
+    &:before {
+      content: '—';
+    }
+  }
+
+  &__author-name {
+    display: block;
+  }
+
+  &__author-role {
+    font-family: $font-family-serif;
+  }
+}
