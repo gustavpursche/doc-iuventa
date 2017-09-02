@@ -3,6 +3,22 @@
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 
+  .image {
+    @include mq(desktop) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .image__caption {
+    @include mq(desktop) {
+      align-self: flex-end;
+      margin-left: auto;
+      margin-top: 1rem;
+      max-width: 30rem;
+    }
+  }
+
   &--multiple-media {
     display: flex;
     flex-direction: column;
@@ -23,6 +39,10 @@
       @include mq(tablet) {
         width: 66.66%;
       }
+    }
+
+    .image__caption {
+      display: none;
     }
   }
 }

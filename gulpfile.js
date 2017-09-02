@@ -106,8 +106,6 @@ gulp.task('markup', () => {
           const captionPath = path.resolve(`./assets/images/${captionFileName}`);
           let caption;
 
-          console.log(captionFileName);
-
           try {
             caption = fs.readFileSync(captionPath, 'utf-8');
           } catch(err) {
