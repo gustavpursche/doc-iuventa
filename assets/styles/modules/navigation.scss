@@ -1,9 +1,11 @@
 .navigation {
   color: $color-boulder;
   font-family: $font-family-sans-serif;
+  font-size: .95rem;
 
   &__entry {
     color: currentColor;
+    display: inline-block;
     padding: .5rem 1rem;
     text-decoration: none;
 

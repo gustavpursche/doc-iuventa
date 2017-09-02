@@ -1,9 +1,9 @@
 .header {
+  margin-bottom: 2rem;
   position: relative;
 
   &__image {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
 
     > img {
       height: auto;
@@ -23,9 +23,14 @@
   &__title {
     font-family: $font-family-sans-serif;
     font-size: 2.8rem;
+    margin-bottom: .5rem;
+    margin-top: 0;
   }
 
   &__intro {
     font-family: $font-family-sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }

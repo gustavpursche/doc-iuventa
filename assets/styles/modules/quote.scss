@@ -1,7 +1,10 @@
 .quote {
   font-family: $font-family-sans-serif;
+  font-size: 1.8rem;
+  margin: 6rem 2rem;
 
   &__author {
+    font-size: 1.2rem;
     font-style: italic;
 
     &:before {
