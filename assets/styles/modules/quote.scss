@@ -1,4 +1,6 @@
 .quote {
+  display: flex;
+  flex-direction: column;
   font-family: $font-family-sans-serif;
   font-size: 1.2rem;
   line-height: 1.35;
@@ -10,19 +12,27 @@
 
   @include mq(tablet) {
     font-size: 1.6rem;
-    margin: 4rem 1.5rem;
+    margin: 4rem auto;
+    transform: translateX(6rem);
+    width: 40rem;
   }
 
   @include mq(desktop) {
     font-size: 1.8rem;
-    margin: 6rem 2rem;
+    margin: 6rem auto;
+    width: 48rem;
   }
 
   &__author {
+    align-self: flex-end;
+    font-size: 1rem;
     font-style: italic;
+    margin-left: auto;
+    margin-top: .5rem;
 
-    &:before {
-      content: '—';
+    @include mq(tablet) {
+      font-size: 1.2rem;
+      margin-top: 2.5rem;
     }
   }
 
