@@ -56,7 +56,9 @@ const cloudfrontConfig = {
     `/*`,
   ],
 };
-const IMAGE_SIZES = [ 400, 600, 800, 1200, 1400, 1800, 2000 ];
+const IMAGE_SIZES = {
+  full: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
+};
 
 let ASSET_PATH = '/dist/assets';
 
@@ -94,34 +96,39 @@ gulp.task('markup', () => {
           break;
 
         case 'image':
-          const name = `G20_${attrs.name}`;
+          const name = attrs.name;
+          const type = attrs.type;
           const captionFileName = `${name}-${attrs.language}.txt`;
           const captionPath = path.resolve(`./assets/images/${captionFileName}`);
-          const caption = fs.readFileSync(captionPath, 'utf-8');
+          let caption;
+
+          try {
+            caption = fs.readFileSync(captionPath, 'utf-8');
+          } catch(err) {
+            caption = null;
+          };
+
           const getSourceSet = fileName => {
-            const sortedSizes = Array.from(IMAGE_SIZES).reverse();
+            const sortedSizes = Array.from(IMAGE_SIZES[type]).reverse();
 
             return sortedSizes.map(width => `
               ${ASSET_PATH}/images/${name}-${width}.jpg ${width}w
             `).join(', ');
           };
 
+          const captionMarkup = caption ? `
+            <figcaption class="image__caption">
+              ${caption}
+            </figcaption>
+          ` : '';
+
           return `
-            <figure class="image">
-              <img data-src="${ASSET_PATH}/images/${name}-2000.jpg"
-                   data-srcset="${getSourceSet(name)}"
-                   alt=""
-                   class="js-lazy-image" />
+            <figure class="${attrs.class || 'image'}">
+              <img src="${ASSET_PATH}/images/${name}-2000.jpg"
+                   srcset="${getSourceSet(name)}"
+                   alt="" />
 
-              <figcaption class="image__caption">
-                <p>${caption}</p>
-              </figcaption>
-
-              <noscript>
-                <img src="${ASSET_PATH}/images/${name}-2000.jpg"
-                     srcset="${getSourceSet(name)}"
-                     alt="" />
-              </noscript>
+              ${captionMarkup}
             </figure>
           `;
           break;
@@ -134,14 +141,27 @@ gulp.task('markup', () => {
 });
 
 gulp.task('images', () => {
+  const flatten = list => list;
+
   const imageStream = merge();
   const defaults = {
     crop : false,
     imageMagick: true,
     upscale : false,
   };
+  const allImageSizes =
+    Object.keys(IMAGE_SIZES)
+      .map(type => IMAGE_SIZES[type])
+      // flatten
+      .reduce(
+        (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
+      )
+      // unique
+      .filter((elem, pos, arr) => {
+        return arr.indexOf(elem) == pos;
+      });
 
-  IMAGE_SIZES.forEach(width => {
+  allImageSizes.forEach(width => {
     const options = Object.assign({}, defaults, { width });
     const stream = gulp.src('assets/images/*.jpg')
         .pipe(parallelize(
