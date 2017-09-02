@@ -1,6 +1,12 @@
 .aside {
+  @include content-media();
   @include small-italic();
-  float: right;
-  margin-right: -12rem;
-  width: 10rem;
+
+  @include mq(tablet) {
+    float: right;
+    margin-bottom: 0;
+    margin-right: -12rem;
+    margin-top: 0;
+    width: 10rem;
+  }
 }

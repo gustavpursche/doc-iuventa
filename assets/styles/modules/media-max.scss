@@ -5,14 +5,24 @@
 
   &--multiple-media {
     display: flex;
+    flex-direction: column;
+
+    @include mq(tablet) {
+      flex-direction: row;
+    }
 
     > *:first-child {
       margin-right: 1.5rem;
-      width: 33.33%;
+
+      @include mq(tablet) {
+        width: 33.33%;
+      }
     }
 
     > *:last-child {
-      width: 66.66%;
+      @include mq(tablet) {
+        width: 66.66%;
+      }
     }
   }
 }

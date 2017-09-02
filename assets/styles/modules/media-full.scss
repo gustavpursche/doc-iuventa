@@ -1,4 +1,11 @@
 .media-full {
   @include content-media();
-  margin-left: 6rem;
+
+  @include mq(tablet) {
+    margin-left: 4rem;
+  }
+
+  @include mq(desktop) {
+    margin-left: 6rem;
+  }
 }
