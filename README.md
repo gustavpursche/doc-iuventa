@@ -19,7 +19,7 @@
     CLOUDFRONT_DISTRIBUTIONID
   ```
 
-- To chance the asset path, depending on the environment, update `ASSET_PATH` in
-  `gruntfile.js`
+- To change the asset path, depending on the environment, update the `ASSET_PATH` variable in
+  `gulpfile.js`
 
 - Run `npm run publish`
