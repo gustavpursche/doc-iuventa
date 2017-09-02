@@ -4,9 +4,20 @@
 
   @include mq(tablet) {
     float: right;
-    margin-bottom: 0;
-    margin-right: -12rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
     margin-top: 0;
-    width: 10rem;
+    width: 12rem;
+  }
+
+  @include mq(desktop) {
+    width: 14rem;
+  }
+
+  @include mq(wide) {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: -14rem;
+    width: 13rem;
   }
 }
