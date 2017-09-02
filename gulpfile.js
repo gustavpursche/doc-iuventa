@@ -161,6 +161,8 @@ gulp.task('images', () => {
         return arr.indexOf(elem) == pos;
       });
 
+  console.log('Debug: collected image sizes:', allImageSizes);
+
   allImageSizes.forEach(width => {
     const options = Object.assign({}, defaults, { width });
     const stream = gulp.src('assets/images/*.jpg')
