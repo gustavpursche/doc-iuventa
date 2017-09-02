@@ -1,0 +1,21 @@
+.navigation {
+  color: $color-boulder;
+  font-family: $font-family-sans-serif;
+
+  &__entry {
+    color: currentColor;
+    padding: .5rem 1rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__entry-count {
+    &:before {
+      content: "#";
+    }
+  }
+}
