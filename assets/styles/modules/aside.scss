@@ -1,0 +1,6 @@
+.aside {
+  @include small-italic();
+  float: right;
+  margin-right: -12rem;
+  width: 10rem;
+}

@@ -9,5 +9,17 @@
     color: $color-boulder;
     display: block;
     font-size: .95rem;
+    padding-top: .8rem;
+    position: relative;
+
+    &:before {
+      background-color: $color-boulder;
+      content: ' ';
+      height: .25rem;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 3rem;
+    }
   }
 }

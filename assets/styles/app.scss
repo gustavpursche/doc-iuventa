@@ -1,11 +1,16 @@
 @import "base/_variables.scss";
+@import "base/_mixins.scss";
 
 @import "base/base.scss";
 @import "base/fonts.scss";
 
+@import "modules/aside.scss";
 @import "modules/chapter-title.scss";
 @import "modules/content-container.scss";
 @import "modules/header.scss";
+@import "modules/image.scss";
 @import "modules/quote.scss";
+@import "modules/media-full.scss";
+@import "modules/media-max.scss";
 @import "modules/navigation.scss";
 @import "modules/visually-hidden.scss";

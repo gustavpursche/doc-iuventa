@@ -57,7 +57,11 @@ const cloudfrontConfig = {
   ],
 };
 const IMAGE_SIZES = {
+  aside: [ 200, 400, 600, ],
+  content: [ 400, 600, 800, 1200, 1400 ],
   full: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
+  max: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
+  'max-half': [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
 };
 
 let ASSET_PATH = '/dist/assets';

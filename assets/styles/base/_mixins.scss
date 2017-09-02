@@ -1,0 +1,14 @@
+@mixin content-media {
+  * + &,
+  & + * {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+@mixin small-italic {
+  color: $color-boulder;
+  font-family: $font-family-serif;
+  font-size: .75rem;
+  font-style: italic;
+}
