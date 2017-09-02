@@ -1,21 +1,27 @@
 .navigation {
   color: $color-boulder;
+  display: flex;
+  flex-direction: row;
   font-family: $font-family-sans-serif;
   font-size: .95rem;
 
   &__entry {
     color: currentColor;
-    display: inline-block;
-    padding: .5rem 1rem;
+    display: flex;
+    margin: 0 1rem .5rem 1rem;
+    padding: .5rem 0 0 0;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      border-bottom: 3px solid $color-cod-gray;
+      text-decoration: none;
     }
   }
 
   &__entry-count {
+    margin-right: .25rem;
+
     &:before {
       content: "#";
     }
