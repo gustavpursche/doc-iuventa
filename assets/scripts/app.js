@@ -2,6 +2,7 @@
 import 'core-js/fn/array/for-each';
 import 'core-js/fn/array/map';
 import 'core-js/fn/object/assign';
+import 'core-js/fn/object/is';
 
 // preload polyfill
 import 'fg-loadcss/src/loadCSS';
@@ -19,13 +20,13 @@ const initImageTooltips = () => {
         {
           position: [220, 150],
           label: `<span class="visually-hidden">Schlauchboot</span>`,
-          content: 'Tooltip content',
+          content: '...',
         },
 
         {
           position: [50, 50],
           label: `<span class="visually-hidden">Das Ende vom Schiff</span>`,
-          content: 'Tooltip content 2',
+          content: '...',
         }
       ],
       origSize: [736, 318],

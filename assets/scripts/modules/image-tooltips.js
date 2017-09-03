@@ -1,4 +1,5 @@
 let origSize;
+let tooltips = [];
 
 const debounce = (callback, wait, context = this) => {
   let timeout = null
@@ -24,6 +25,7 @@ const init = (image, opts) => {
   }, options.throttled);
 
   origSize = options.origSize;
+  tooltips = options.tooltips;
 
   window.addEventListener('resize', resize);
 
@@ -46,6 +48,13 @@ const add = (tooltip, image) => {
   button.addEventListener('click', (event) => {
     event.preventDefault();
     showTooltip(tooltip);
+
+    // make sure only one tt is open at a time
+    tooltips.forEach(current => {
+      if (!Object.is(current, tooltip)) {
+        hideTooltip(current);
+      }
+    });
   });
 
   tooltip.node = button;
@@ -63,15 +72,40 @@ const updatePosition = (tooltip, image) => {
   node.style.left = `${newX}px`;
   node.style.top = `${newY}px`;
 
+  if (tooltip.tooltip) {
+    tooltip.tooltip.style.left = `${newX}px`;
+    tooltip.tooltip.style.top = `${newY}px`;
+  }
+
+  tooltip.actualPosition = [newX, newY];
+
   return [newY, newY];
 };
 
 const showTooltip = (tooltip) => {
-  const { content } = tooltip;
+  if (!tooltip.tooltip) {
+    const { content, actualPosition } = tooltip;
+    const node = document.createElement('div');
+    node.classList.add('image-tooltip-content');
+
+    if (content) {
+      node.innerHTML = content;
+    }
+
+    node.style.left = `${actualPosition[0]}px`;
+    node.style.top = `${actualPosition[1]}px`;
+
+    tooltip.tooltip = node;
+    tooltip.node.parentNode.insertBefore(node, tooltip.node.nextSibling);
+  } else {
+    tooltip.tooltip.style.display = 'block';
+  }
 };
 
 const hideTooltip = (tooltip) => {
-
+  if (tooltip.tooltip) {
+    tooltip.tooltip.style.display = 'none';
+  }
 };
 
 export { init, add, remove, updatePosition };
