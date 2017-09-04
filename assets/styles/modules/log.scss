@@ -29,6 +29,17 @@
     top: 0;
   }
 
+  &__entry-sender {
+    &:after {
+      content: '〉';
+      display: inline-block;
+      font-size: .6rem;
+      font-weight: normal;
+      margin-left: .5rem;
+      margin-right: -.4rem;
+    }
+  }
+
   &__entry-content {
     border-left: .15rem solid $color-shuttle-gray;
     margin-bottom: 0;
