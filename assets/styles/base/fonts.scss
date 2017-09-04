@@ -13,3 +13,18 @@
        url(#{$font-path}open-sans-condensed-bold.svg#OpenSansCondensed) format('svg'),
        url(#{$font-path}open-sans-condensed-bold.eot?#iefix) format('embedded-opentype');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(#{$font-path}Ubuntu-Mono.eot);
+  src: local('Ubuntu Mono'),
+       local('UbuntuMono-Regular'),
+       url(#{$font-path}ubuntu-mono.woff2) format('woff2'),
+       url(#{$font-path}ubuntu-mono.woff) format('woff'),
+       url(#{$font-path}ubuntu-mono.svg#UbuntuMono) format('svg'),
+       url(#{$font-path}ubuntu-mono.eot?#iefix) format('embedded-opentype'),
+       url(#{$font-path}ubuntu-mono.ttf) format('truetype');
+}
