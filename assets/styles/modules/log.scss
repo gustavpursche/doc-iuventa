@@ -52,5 +52,6 @@
 
   &__entry:last-child &__entry-content:last-child {
     border-color: $color-athens-gray;
+    padding-bottom: 0;
   }
 }
