@@ -10,6 +10,7 @@ import 'fg-loadcss/src/cssrelpreload';
 
 import domready from 'domready';
 import { init as imageTooltips } from './modules/image-tooltips';
+import { init as emailThread } from './modules/thread';
 
 const initImageTooltips = () => {
   const tooltips = [...document.getElementsByClassName('js-with-image-tooltips')];
@@ -41,6 +42,13 @@ const initImageTooltips = () => {
   }
 };
 
+const initEmailThreads = () => {
+  const threads = [...document.querySelectorAll('.thread')];
+
+  return threads.forEach(thread => emailThread(thread));
+};
+
 domready(() => {
   initImageTooltips();
+  initEmailThreads();
 });
