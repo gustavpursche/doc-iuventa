@@ -13,8 +13,10 @@
 
   &__content {
     @include mq(tablet) {
-      bottom: 2rem;
+      background-image: linear-gradient(to top, rgba(12, 21, 32, 0.7), transparent);
+      bottom: 0;
       color: white;
+      padding-bottom: 1.5rem;
       position: absolute;
       width: 100%;
     }
@@ -38,8 +40,7 @@
     }
 
     @include mq(desktop) {
-      font-size: 3.6rem;
-      margin-bottom: 1rem;
+      font-size: 3.4rem;
       max-width: 60rem;
     }
   }
