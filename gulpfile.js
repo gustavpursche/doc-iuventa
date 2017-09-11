@@ -151,7 +151,7 @@ gulp.task('images', () => {
   const defaults = {
     crop : false,
     imageMagick: true,
-    upscale : false,
+    upscale : true,
   };
   const allImageSizes =
     Object.keys(IMAGE_SIZES)
