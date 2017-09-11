@@ -1,0 +1,83 @@
+.email {
+  font-family: $font-family-email;
+  font-size: .8rem;
+  padding: 1rem 1rem 1rem 4.5rem;
+  position: relative;
+
+  &--collapsed {
+    background-color: $color-athens-gray;
+    transition: background-color 200ms ease;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-athens-gray, 3%);
+      cursor: pointer;
+    }
+  }
+
+  &--collapsed &__body {
+    display: none;
+  }
+
+  &--collapsed &__preview {
+    display: block;
+  }
+
+  &--collapsed &__recipients {
+    display: none;
+  }
+
+  &__avatar {
+    background-color: $color-shuttle-gray;
+    border-radius: 50%;
+    height: 2.5rem;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+    width: 2.5rem;
+  }
+
+  &__subject {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__recipients {
+    color: $color-boulder;
+    font-size: .7rem;
+    display: block;
+  }
+
+  &__preview {
+    display: none;
+    font-size: .8rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    > p:first-child {
+      margin-top: 0;
+    }
+
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__date {
+    align-self: flex-end;
+    font-size: .7rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    position: relative;
+    top: 1rem;
+  }
+}
