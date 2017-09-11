@@ -1,13 +1,12 @@
 .thread {
   @include limited-media-max();
-  border: 1px solid $color-boulder;
+  box-shadow: 0 0 2px $color-boulder;
 
   &__title {
-    border-bottom: 1px solid $color-boulder;
-    font-family: $font-family-sans-serif;
-    font-size: 1.2rem;
-    margin: 0 2.5rem;
-    padding: .5rem 0;
+    font-family: $font-family-email;
+    font-size: 1rem;
+    margin: 0 1rem;
+    padding: .7rem 0;
   }
 
   &__list {
@@ -17,8 +16,7 @@
   }
 
   &__list-item {
-    & + & {
-      border-top: 1px solid $color-boulder;
-    }
+    border-top: 1px solid $color-mercury;
+    outline: none;
   }
 }
