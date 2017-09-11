@@ -22,11 +22,7 @@ const openItem = (item) => {
 };
 
 const init = (container) => {
-  ITEMS = [...container.querySelectorAll('.thread__list-item')];
-
-  closeAllBut(ITEMS[0]);
-
-  container.addEventListener('click', (event) => {
+  const open = (event) => {
     const { target } = event;
     const closest = target.closest('.thread__list-item');
     let item;
@@ -40,6 +36,17 @@ const init = (container) => {
     if (item) {
       openItem(item);
       closeAllBut(item);
+    }
+  };
+
+  ITEMS = [...container.querySelectorAll('.thread__list-item')];
+
+  closeAllBut(ITEMS[0]);
+
+  container.addEventListener('click', open);
+  container.addEventListener('keydown', (event) => {
+    if(event.keyCode === 13) {
+      open(event);
     }
   });
 };

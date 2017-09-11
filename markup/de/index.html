@@ -1272,10 +1272,17 @@
       <div class="thread">
         <h3 class="thread__title">RE: SAR ACTION PLAN</h3>
 
-        <ol class="thread__list">
+        <ol class="thread__list"
+            aria-live="polite"
+            role="tablist">
           <li class="thread__list-item"
-              tabindex="-1">
-            <div class="email">
+              role="tab"
+              tabindex="0"
+              aria-controls="email_1">
+            <div class="email"
+                 role="tabpanel"
+                 id="email_1"
+                 aria-label="MRCC an IUVENTA">
               <img src=""
                    class="email__avatar"
                    alt="" />
@@ -1306,8 +1313,13 @@
           </li>
 
           <li class="thread__list-item"
-              tabindex="-1">
-            <div class="email">
+              role="tab"
+              tabindex="0"
+              aria-controls="email_2">
+            <div class="email"
+                 role="tabpanel"
+                 id="email_2"
+                 aria-label="MRCC an IUVENTA (2)">
               <img src=""
                    class="email__avatar"
                    alt="" />
@@ -1338,8 +1350,13 @@
           </li>
 
           <li class="thread__list-item"
-              tabindex="-1">
-            <div class="email email--collapsed">
+              role="tab"
+              tabindex="0"
+              aria-controls="email_3"
+              aria-label="MRCC an IUVENTA (3)">
+            <div class="email"
+                 role="tabpanel"
+                 id="email_3">
               <img src=""
                    class="email__avatar"
                    alt="" />
