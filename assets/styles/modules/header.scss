@@ -1,8 +1,8 @@
 .header {
-  margin-bottom: 2rem;
   position: relative;
 
   &__image {
+    line-height: 0;
     margin: 0;
 
     > img {
