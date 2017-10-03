@@ -67,7 +67,7 @@ const IMAGE_SIZES = {
 let ASSET_PATH = '/dist/assets';
 
 if (ENV === 'production') {
-  ASSET_PATH = `/assets`;
+  ASSET_PATH = 'https://cdn.jib-collective.net/iuventa/dist/assets';
 }
 
 gulp.task('markup', () => {
