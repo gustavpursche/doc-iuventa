@@ -99,6 +99,22 @@ gulp.task('markup', () => {
           }
           break;
 
+        case 'video':
+          const name = attrs.name;
+          const poster = attrs.poster;
+          const posterMarkup = poster ? `poster="${ASSET_PATH}/images/${poster}.jpg"` : '';
+
+          return `
+            <video preload="none" ${posterMarkup}>
+              <source src="${ASSET_PATH}/videos/${name}.webm"
+                      type="video/webm" />
+
+              <source src="${ASSET_PATH}/videos/${name}.mp4"
+                      type="video/mp4" />
+            </video>
+          `;
+          break;
+
         case 'image':
           const name = attrs.name;
           const type = attrs.type;
