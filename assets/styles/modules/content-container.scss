@@ -13,4 +13,9 @@
   @include mq(desktop) {
     margin-left: 6rem;
   }
+
+  > p {
+    color: $color-tundora;
+    font-size: 1.2rem;
+  }
 }
