@@ -116,7 +116,7 @@ gulp.task('markup', () => {
           break;
 
         case 'image':
-          const captionFileName = `${name}-${attrs.language}.txt`;
+          const captionFileName = `${attrs.name}-${attrs.language}.txt`;
           const captionPath = path.resolve(`./assets/images/${captionFileName}`);
           let caption;
 
