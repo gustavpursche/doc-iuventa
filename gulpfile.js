@@ -100,24 +100,22 @@ gulp.task('markup', () => {
           break;
 
         case 'video':
-          const name = attrs.name;
-          const poster = attrs.poster;
-          const posterMarkup = poster ? `poster="${ASSET_PATH}/images/${poster}.jpg"` : '';
+          const posterMarkup = attrs.poster ?
+            `poster="${ASSET_PATH}/images/${attrs.poster}.jpg"` :
+            '';
 
           return `
             <video preload="none" ${posterMarkup}>
-              <source src="${ASSET_PATH}/videos/${name}.webm"
+              <source src="${ASSET_PATH}/videos/${attrs.name}.webm"
                       type="video/webm" />
 
-              <source src="${ASSET_PATH}/videos/${name}.mp4"
+              <source src="${ASSET_PATH}/videos/${attrs.name}.mp4"
                       type="video/mp4" />
             </video>
           `;
           break;
 
         case 'image':
-          const name = attrs.name;
-          const type = attrs.type;
           const captionFileName = `${name}-${attrs.language}.txt`;
           const captionPath = path.resolve(`./assets/images/${captionFileName}`);
           let caption;
@@ -129,10 +127,10 @@ gulp.task('markup', () => {
           };
 
           const getSourceSet = fileName => {
-            const sortedSizes = Array.from(IMAGE_SIZES[type]).reverse();
+            const sortedSizes = Array.from(IMAGE_SIZES[attrs.type]).reverse();
 
             return sortedSizes.map(width => `
-              ${ASSET_PATH}/images/${name}-${width}.jpg ${width}w
+              ${ASSET_PATH}/images/${attrs.name}-${width}.jpg ${width}w
             `).join(', ');
           };
 
@@ -144,8 +142,8 @@ gulp.task('markup', () => {
 
           return `
             <figure class="${attrs.class || 'image'}">
-              <img src="${ASSET_PATH}/images/${name}-2000.jpg"
-                   srcset="${getSourceSet(name)}"
+              <img src="${ASSET_PATH}/images/${attrs.name}-2000.jpg"
+                   srcset="${getSourceSet(attrs.name)}"
                    alt="" />
 
               ${captionMarkup}
