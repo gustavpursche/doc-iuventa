@@ -70,7 +70,7 @@ if (ENV === 'production') {
   ASSET_PATH = 'https://cdn.jib-collective.net/iuventa/dist/assets';
 }
 
-gulp.task('markup', () => {
+gulp.task('markup', [ 'styles', ], () => {
   return gulp.src('markup/**/*.html')
     .pipe(replace('{{critical-css}}', (...args) => {
       return `
@@ -296,7 +296,6 @@ gulp.task('watch', ['build',], () => {
 gulp.task('build', [
   'fonts',
   'images',
-  'styles',
   'scripts',
   'markup',
 ]);
