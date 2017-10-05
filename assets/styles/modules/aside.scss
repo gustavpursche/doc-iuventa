@@ -20,4 +20,18 @@
     margin-right: -20rem;
     width: 18rem;
   }
+
+  &--start {
+    @include mq(tablet) {
+      float: left;
+      margin-bottom: 2rem;
+      margin-left: 0;
+      margin-right: 2rem;
+      margin-top: 2rem;
+    }
+
+    @include mq(wide) {
+      margin-left: -4rem;
+    }
+  }
 }
