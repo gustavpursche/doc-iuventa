@@ -72,6 +72,13 @@ if (ENV === 'production') {
 
 gulp.task('markup', () => {
   return gulp.src('markup/**/*.html')
+    .pipe(replace('{{critical-css}}', (...args) => {
+      return `
+        <style type="text/css">
+          ${fs.readFileSync('dist/assets/styles/critical.css', 'utf-8')}
+        </style>
+      `;
+    }))
     .pipe(replace(/{{([a-z]+) ([a-z]+=".*")}}/gi, (...args) => {
       const [match, type, rawAttrs, position] = args;
       const attrs = rawAttrs.split(' ').reduce((acc, attr) => {
@@ -225,13 +232,16 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('styles', () => {
-  return gulp.src('assets/styles/app.scss')
-      .pipe(header(`
-          $font-path: "${ASSET_PATH}/fonts/";
-      `))
+  const vars = `
+      $font-path: "${ASSET_PATH}/fonts/";
+  `;
+  const critical = gulp.src('assets/styles/critical.scss');
+  const app = gulp.src('assets/styles/app.scss');
+
+  return merge(critical, app)
+      .pipe(header(vars))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.init()))
-      .pipe(concat('app.css'))
       .pipe(autoprefixer({
           browsers: [
             'Android >= 4.4',
@@ -242,6 +252,10 @@ gulp.task('styles', () => {
       .pipe(gulpIf(ENV === 'production', cssnano()))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.write()))
       .pipe(gulp.dest('dist/assets/styles/'));
+});
+
+gulp.task('styles-inline', () => {
+
 });
 
 gulp.task('upload', ['build', ], () => {
@@ -281,8 +295,8 @@ gulp.task('watch', ['build',], () => {
 
 gulp.task('build', [
   'fonts',
-  'markup',
   'images',
   'styles',
   'scripts',
+  'markup',
 ]);
