@@ -60,8 +60,6 @@ const IMAGE_SIZES = {
   aside: [ 200, 400, 600, ],
   content: [ 400, 600, 800, 1200, 1400 ],
   full: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
-  max: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
-  'max-half': [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
 };
 
 let ASSET_PATH = '/dist/assets';
@@ -104,22 +102,6 @@ gulp.task('markup', [ 'styles', ], () => {
             case 'image':
               return `${ASSET_PATH}/images/${attrs.name}${cacheBust}`;
           }
-          break;
-
-        case 'video':
-          const posterMarkup = attrs.poster ?
-            `poster="${ASSET_PATH}/images/${attrs.poster}.jpg"` :
-            '';
-
-          return `
-            <video preload="none" ${posterMarkup}>
-              <source src="${ASSET_PATH}/videos/${attrs.name}.webm"
-                      type="video/webm" />
-
-              <source src="${ASSET_PATH}/videos/${attrs.name}.mp4"
-                      type="video/mp4" />
-            </video>
-          `;
           break;
 
         case 'image':
