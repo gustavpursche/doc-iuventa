@@ -2,6 +2,7 @@
   font-size: 0;
   line-height: 1;
   margin: 0;
+  position: relative;
 
   > img {
     height: auto;
@@ -12,5 +13,14 @@
     @include small-italic();
     display: block;
     margin-top: .5rem;
+  }
+
+  &--content &__caption {
+    @include mq(desktop) {
+      bottom: 0;
+      position: absolute;
+      right: -20rem;
+      width: 19rem;
+    }
   }
 }

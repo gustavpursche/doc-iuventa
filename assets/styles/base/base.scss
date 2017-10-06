@@ -28,4 +28,9 @@ p {
   & + & {
     margin-top: 1rem;
   }
+
+  & + .image,
+  .image + & {
+    margin-top: 2.5rem;
+  }
 }

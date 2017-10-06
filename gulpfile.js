@@ -56,6 +56,7 @@ const cloudfrontConfig = {
     `/*`,
   ],
 };
+
 const IMAGE_SIZES = {
   aside: [ 300, 400, 600, ],
   content: [ 400, 760, 980, ],
@@ -130,7 +131,7 @@ gulp.task('markup', [ 'styles', ], () => {
           ` : '';
 
           return `
-            <figure class="${attrs.class || 'image'}">
+            <figure class="${attrs.class || 'image'} image--${attrs.type}">
               <img src="${ASSET_PATH}/images/${attrs.name}-2000.jpg"
                    srcset="${getSourceSet(attrs.name)}"
                    alt="" />
