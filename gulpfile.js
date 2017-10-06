@@ -57,9 +57,9 @@ const cloudfrontConfig = {
   ],
 };
 const IMAGE_SIZES = {
-  aside: [ 200, 400, 600, ],
-  content: [ 400, 600, 800, 1200, 1400 ],
-  full: [ 400, 600, 800, 1200, 1400, 1800, 2000 ],
+  aside: [ 300, 400, 600, ],
+  content: [ 400, 760, 980, ],
+  full: [ 400, 760, 980, 1200, 2000, ],
 };
 
 let ASSET_PATH = '/dist/assets';
@@ -148,8 +148,6 @@ gulp.task('markup', [ 'styles', ], () => {
 });
 
 gulp.task('images', () => {
-  const flatten = list => list;
-
   const imageStream = merge();
   const defaults = {
     crop : false,
@@ -160,13 +158,9 @@ gulp.task('images', () => {
     Object.keys(IMAGE_SIZES)
       .map(type => IMAGE_SIZES[type])
       // flatten
-      .reduce(
-        (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-      )
+      .reduce((a, b) => a.concat(Array.isArray(b) ? b : b), [])
       // unique
-      .filter((elem, pos, arr) => {
-        return arr.indexOf(elem) == pos;
-      });
+      .filter((elem, pos, arr) => arr.indexOf(elem) === pos);
 
   console.log('Debug: collected image sizes:', allImageSizes);
 
