@@ -27,7 +27,10 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+      cache: true,
+      parallel: true,
+    }),
   ],
   resolve: {
     modules: [
