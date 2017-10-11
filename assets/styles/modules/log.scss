@@ -15,6 +15,39 @@
     line-height: 1.3;
     padding-left: 8rem;
     position: relative;
+
+    // shortened indicator
+    &--hidden {
+      &:before {
+        background-color: $color-athens-gray;
+        border: .1rem solid $color-shuttle-gray;
+        content: '…';
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1;
+        margin-left: -.5rem;
+        padding: 0 .2rem .2rem .2rem;
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          background-color: green;
+          color: red;
+        }
+      }
+    }
+
+    &--hidden + &--hidden {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__entry--hidden &__entry-time,
+  &__entry--hidden &__entry-content {
+    display: none;
   }
 
   &__entry-time {

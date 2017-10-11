@@ -105,6 +105,47 @@ gulp.task('markup', [ 'styles', ], () => {
           }
           break;
 
+        case 'log':
+          const logFileName = `${attrs.name}-${attrs.language}.json`;
+          const log = require(path.resolve(`./assets/logs/${logFileName}`));
+          const logEntry = (ctx) => `
+            <li class="log__entry ${ctx.classes}">\n
+              <span class="log__entry-time">\n
+                ${ctx.time}\n
+              </span>\n
+              <p class="log__entry-content">\n
+                ${ctx.text}\n
+              </p>\n
+            </li>\n
+          `;
+
+          let entriesMarkup = '';
+
+          log.forEach(entry => {
+            let classes = '';
+            const reserved = [ 'hidden' ];
+            const keys = Object.keys(entry);
+            const time = keys.find(key => !reserved.includes(key));
+            const text = entry[time];
+
+            if (entry.hidden) {
+              classes += 'log__entry--hidden';
+            }
+
+            entriesMarkup += logEntry({
+              time,
+              text,
+              classes,
+            });
+          });
+
+          return `
+            <ol class="log__list">
+              ${entriesMarkup}
+            </ol>
+          `;
+          break;
+
         case 'image':
           const captionFileName = `${attrs.name}-${attrs.language}.txt`;
           const captionPath = path.resolve(`./assets/images/${captionFileName}`);

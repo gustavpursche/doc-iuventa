@@ -7,13 +7,15 @@ import 'fg-loadcss/src/cssrelpreload';
 
 import domready from 'domready';
 import { init as emailThread } from './modules/thread';
+import { init as missionLog } from './modules/log';
 
-const initEmailThreads = () => {
-  const threads = [...document.querySelectorAll('.thread')];
+const initEmailThreads = () =>
+  [...document.getElementsByClassName('thread')].forEach(thread => emailThread(thread));
 
-  return threads.forEach(thread => emailThread(thread));
-};
+const initMissionLogs = () =>
+  [...document.getElementsByClassName('log')].forEach(log => missionLog(log));
 
 domready(() => {
   initEmailThreads();
+  initMissionLogs();
 });
