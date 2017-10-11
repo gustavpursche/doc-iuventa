@@ -1,0 +1,42 @@
+.impressum {
+  background-color: $color-mirage;
+  color: white;
+  font-family: $font-family-email;
+  font-size: 1rem;
+  margin-top: 10rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  padding-top: 4rem;
+
+  @include mq(tablet) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include mq(desktop) {
+    padding-left: 6rem;
+  }
+
+  &__inner {
+    max-width: 46rem;
+  }
+
+  &__title {
+    @include visually-hidden();
+  }
+
+  &__section-title {
+    font-family: $font-family-sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: .75rem;
+    margin-top: 4rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    color: currentColor;
+  }
+}
