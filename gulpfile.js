@@ -149,7 +149,7 @@ gulp.task('markup', [ 'styles', ], () => {
           let threadMarkup = '';
 
           threads.forEach(email => {
-            const props = {
+            threadMarkup += renderEmail({
               id: uniqueId(),
               preview: striptags(email.text).substr(0, 200),
               from: htmlEntities.encode(email.from),
@@ -159,11 +159,7 @@ gulp.task('markup', [ 'styles', ], () => {
               subject: email.subject,
               date: email.date,
               time: email.time,
-            };
-
-            console.log(props);
-
-            threadMarkup += renderEmail(props);
+            });
           });
 
           return `
