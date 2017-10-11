@@ -59,6 +59,13 @@
       top: 0;
       width: .5rem;
     }
+
+    > abbr {
+      background-color: $color-laser-lemon;
+      cursor: pointer;
+      padding-left: .2rem;
+      padding-right: .2rem;
+    }
   }
 
   &__entry:last-child &__entry-content:last-child {
