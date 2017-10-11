@@ -14,6 +14,11 @@
     margin-left: 6rem;
   }
 
+  &--extended {
+    @include content-media();
+    max-width: 60rem;
+  }
+
   > p {
     color: $color-tundora;
     font-size: 1.2rem;

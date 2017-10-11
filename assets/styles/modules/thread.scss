@@ -1,6 +1,7 @@
 .thread {
   @include limited-media-max();
   box-shadow: 0 0 2px $color-boulder;
+  margin-top: 1.5rem;
 
   &__title {
     font-family: $font-family-email;
