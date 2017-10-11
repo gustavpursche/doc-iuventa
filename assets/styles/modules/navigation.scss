@@ -9,14 +9,10 @@
   overflow-x: hidden;
   width: 100vw;
 
-  @include mq(desktop) {
-    padding-left: 5rem;
-  }
-
   &__entry {
     color: currentColor;
     display: flex;
-    margin: 0 1rem .75rem 1rem;
+    margin: 0 1.2rem .75rem 1.2rem;
     padding: .75rem 0 0 0;
     text-decoration: none;
 
