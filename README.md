@@ -1,4 +1,4 @@
-# Documentary: Wie die Seenotrettung abgeschafft wurde
+# Documentary: Wie die EU die Seenotrettung abschaffte
 
 ## Setup
 
