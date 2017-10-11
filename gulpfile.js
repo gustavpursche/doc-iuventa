@@ -20,6 +20,8 @@ const replace = require('gulp-replace');
 const resize = require('gulp-image-resize')
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const striptags = require('striptags');
+const { uniqueId } = require('lodash');
 const webpack = require('webpack');
 
 const S3_PATH = '/iuventa/dist/';
@@ -103,6 +105,61 @@ gulp.task('markup', [ 'styles', ], () => {
             case 'image':
               return `${ASSET_PATH}/images/${attrs.name}${cacheBust}`;
           }
+          break;
+
+        case 'thread':
+          const threadFileName = `${attrs.name}-${attrs.language}.json`;
+          const threads = require(path.resolve(`./assets/threads/${threadFileName}`));
+          const renderEmail = (ctx) => `
+            <li class="thread__list-item"
+                role="tab"
+                tabindex="0"
+                aria-controls="email_${ctx.id}">
+              <div class="email"
+                   role="tabpanel"
+                   id="email_${ctx.id}"
+                   aria-label="${ctx.subject}">
+                <img src=""
+                     class="email__avatar"
+                     alt="" />
+                <h4 class="email__subject">${ctx.subject}</h4>
+                <p class="email__recipients">${ctx.to}</p>
+
+                <p class="email__preview">
+                  ${ctx.preview}
+                </p>
+
+                <div class="email__body">
+                  <span class="email__date">
+                    ${ctx.date}
+                    <span class="email__date-time">
+                      ${ctx.time}
+                    </span>
+                  </span>
+
+                  ${ctx.text}
+                </div>
+              </div>
+            </li>
+          `;
+
+          let threadMarkup = '';
+
+          threads.forEach(email => {
+            const extendenEmail = Object.assign({
+              id: uniqueId(),
+              preview: striptags(email.text).substr(0, 200),
+            }, email);
+            threadMarkup += renderEmail(extendenEmail);
+          });
+
+          return `
+            <ol class="thread__list"
+                aria-live="polite"
+                role="tablist">
+              ${threadMarkup}
+            </ol>
+          `;
           break;
 
         case 'log':
