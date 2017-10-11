@@ -110,7 +110,8 @@
   },
 
   {
-    "10:54": "MRCC ruft an, Bestätigung welche der gemeldeten Boote Iuventa in Sicht hat"
+    "10:54": "MRCC ruft an, Bestätigung welche der gemeldeten Boote Iuventa in Sicht hat",
+    "hidden": true
   },
 
   {
@@ -155,7 +156,8 @@
   },
 
   {
-    "14:42": "In Absprache mit OSC, Beginn TV7 Richtung Iuventa zu ziehen"
+    "14:42": "In Absprache mit OSC, Beginn TV7 Richtung Iuventa zu ziehen",
+    "hidden": true
   },
 
   {
