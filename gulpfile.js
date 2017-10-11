@@ -1,3 +1,4 @@
+const { AllHtmlEntities } = require('html-entities');
 const autoprefixer = require('gulp-autoprefixer');
 const awspublish = require('gulp-awspublish');
 const cloudfront = require('gulp-cloudfront-invalidate');
@@ -23,6 +24,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const striptags = require('striptags');
 const { uniqueId } = require('lodash');
 const webpack = require('webpack');
+
+const htmlEntities = new AllHtmlEntities();
 
 const S3_PATH = '/iuventa/dist/';
 const ENV = process.env.ENV || 'dev';
@@ -146,11 +149,21 @@ gulp.task('markup', [ 'styles', ], () => {
           let threadMarkup = '';
 
           threads.forEach(email => {
-            const extendenEmail = Object.assign({
+            const props = {
               id: uniqueId(),
               preview: striptags(email.text).substr(0, 200),
-            }, email);
-            threadMarkup += renderEmail(extendenEmail);
+              from: htmlEntities.encode(email.from),
+              to: email.to.map(to => htmlEntities.encode(to)),
+              cc: email.cc && email.cc.map(cc => htmlEntities.encode(cc)),
+              text: email.text,
+              subject: email.subject,
+              date: email.date,
+              time: email.time,
+            };
+
+            console.log(props);
+
+            threadMarkup += renderEmail(props);
           });
 
           return `
