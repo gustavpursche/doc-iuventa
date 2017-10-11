@@ -59,9 +59,25 @@
 
     @include mq(desktop) {
       display: inline-block;
-      font-size: 1.2rem;
       line-height: 1.2;
       max-width: 42rem;
+    }
+  }
+
+  &__date {
+    display: block;
+    font-size: .9rem;
+    padding-top: 2.5rem;
+    position: relative;
+
+    &:before {
+      border-left: 1px solid currentColor;
+      content: '';
+      height: .8rem;
+      left: calc(50% - 1px);
+      position: absolute;
+      top: 1rem;
+      width: 0;
     }
   }
 }
