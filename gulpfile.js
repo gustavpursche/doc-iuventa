@@ -170,6 +170,10 @@ gulp.task('markup', [ 'styles', ], () => {
                 role="tablist">
               ${threadMarkup}
             </ol>
+
+            <button class="thread-expand">
+              Den ganzen E-Mailverkehr einblenden
+            </button>
           `;
           break;
 

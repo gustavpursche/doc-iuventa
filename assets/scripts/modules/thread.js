@@ -1,6 +1,14 @@
 const COLLAPSED_CSS_CLASS = 'email--collapsed';
 let ITEMS;
 
+const collapseThread = (container) => {
+  container.classList.add('thread--collapsed');
+};
+
+const expandThread = (container) => {
+  container.classList.remove('thread--collapsed');
+};
+
 const getEmailContent = (item) => {
   return item.querySelector('.email');
 };
@@ -33,6 +41,10 @@ const init = (container) => {
       item = closest;
     }
 
+    if (target.matches('.thread-expand')) {
+      expandThread(target.closest('.thread'));
+    }
+
     if (item) {
       openItem(item);
       closeAllBut(item);
@@ -42,6 +54,7 @@ const init = (container) => {
   ITEMS = [...container.querySelectorAll('.thread__list-item')];
 
   closeAllBut(ITEMS[0]);
+  collapseThread(container);
 
   container.addEventListener('click', open);
   container.addEventListener('keydown', (event) => {

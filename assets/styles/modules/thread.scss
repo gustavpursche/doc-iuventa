@@ -2,6 +2,7 @@
   @include limited-media-max();
   box-shadow: 0 0 2px $color-boulder;
   margin-top: 1.5rem;
+  position: relative;
 
   &__title {
     font-family: $font-family-email;
@@ -19,5 +20,21 @@
   &__list-item {
     border-top: 1px solid $color-mercury;
     outline: none;
+  }
+
+  // show first 3 emails
+  &--collapsed &__list > *:nth-child(n + 4) {
+    display: none;
+  }
+
+  // make all but the first one slightly transparent
+  &--collapsed &__list > *:nth-child(-n + 4):not(:first-child) {
+    opacity: .5;
+  }
+
+  // cut off last email
+  &--collapsed &__list > *:nth-child(3) {
+    height: 3rem;
+    overflow: hidden;
   }
 }

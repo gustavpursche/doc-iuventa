@@ -1,0 +1,26 @@
+.thread-expand {
+  background-color: #5c6875;
+  border: none;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  display: none;
+  font-family: $font-family-sans-serif;
+  font-size: .9rem;
+  left: 50%;
+  letter-spacing: .05rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translate(-50%, 50%);
+  z-index: 100;
+
+  &:hover,
+  &:focus {
+    // TODO
+  }
+
+  .thread--collapsed & {
+    display: inline-block;
+  }
+}
