@@ -140,7 +140,9 @@ gulp.task('markup', [ 'styles', ], () => {
                     </span>
                   </span>
 
-                  ${ctx.text}
+                  <div>
+                    ${ctx.text}
+                  </div>
                 </div>
               </div>
             </li>
