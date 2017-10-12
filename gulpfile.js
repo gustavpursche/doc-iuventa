@@ -181,9 +181,11 @@ gulp.task('markup', [ 'styles', ], () => {
               <span class="log__entry-time">\n
                 ${ctx.time}\n
               </span>\n
-              <p class="log__entry-content">\n
-                ${ctx.text}\n
-              </p>\n
+              <div class="log__entry-content">\n
+                <p>\n
+                  ${ctx.text}\n
+                </p>\n
+              </div>\n
             </li>\n
           `;
 

@@ -4,6 +4,15 @@
   font-family: $font-family-monospace;
   padding: 2rem;
 
+  &__sub-title {
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   &__list {
     list-style: none;
     margin: 0;
@@ -16,24 +25,30 @@
     padding-left: 8rem;
     position: relative;
 
-    // shortened indicator
     &--hidden {
       &:before {
         background-color: $color-athens-gray;
         border: .1rem solid $color-shuttle-gray;
+        border-radius: 50%;
         content: '…';
         cursor: pointer;
         display: inline-block;
-        line-height: 1;
-        margin-left: -.5rem;
-        padding: 0 .2rem .2rem .2rem;
+        font-size: .6rem;
+        height: .7rem;
+        line-height: .5rem;
+        margin-left: -.38rem;
+        position: absolute;
+        text-align: center;
+        top: -1.2rem;
+        width: .7rem;
+        z-index: 100;
       }
 
       &:hover,
       &:focus {
         &:before {
-          background-color: green;
-          color: red;
+          background-color: $color-shuttle-gray;
+          color: white;
         }
       }
     }
@@ -43,10 +58,19 @@
         display: none;
       }
     }
+
+    &--hidden &-content {
+      padding-bottom: .5rem;
+    }
+
+    &--hidden + &--hidden &-content {
+      padding-bottom: 0;
+    }
   }
 
   &__entry--hidden &__entry-time,
-  &__entry--hidden &__entry-content {
+  &__entry--hidden &__entry-content > *,
+  &__entry--hidden &__entry-content:before {
     display: none;
   }
 
@@ -87,7 +111,7 @@
       width: .5rem;
     }
 
-    > abbr {
+    abbr {
       background-color: $color-laser-lemon;
       cursor: pointer;
       padding-left: .2rem;
