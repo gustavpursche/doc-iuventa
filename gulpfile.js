@@ -125,21 +125,33 @@ gulp.task('markup', [ 'styles', ], () => {
                 <img src=""
                      class="email__avatar"
                      alt="" />
+
                 <h4 class="email__subject">${ctx.subject}</h4>
-                <p class="email__recipients">${ctx.to}</p>
+
+                <p class="email__recipients">
+                  von ${ctx.from}
+                </p>
+
+                <p class="email__recipients">
+                  an ${ctx.to.join(', ')}
+                </p>
+
+                <p class="email__recipients email__recipients--cc">
+                  ${ctx.cc.join(', ')}
+                </p>
 
                 <p class="email__preview">
                   ${ctx.preview}
                 </p>
 
-                <div class="email__body">
-                  <span class="email__date">
-                    ${ctx.date}
-                    <span class="email__date-time">
-                      ${ctx.time}
-                    </span>
+                <span class="email__date">
+                  ${ctx.date}
+                  <span class="email__date-time">
+                    ${ctx.time}
                   </span>
+                </span>
 
+                <div class="email__body">
                   <div>
                     ${ctx.text}
                   </div>
@@ -151,17 +163,19 @@ gulp.task('markup', [ 'styles', ], () => {
           let threadMarkup = '';
 
           threads.forEach(email => {
-            threadMarkup += renderEmail({
-              id: uniqueId(),
-              preview: striptags(email.text).substr(0, 200),
-              from: htmlEntities.encode(email.from),
-              to: email.to.map(to => htmlEntities.encode(to)),
-              cc: email.cc && email.cc.map(cc => htmlEntities.encode(cc)),
-              text: email.text,
-              subject: email.subject,
-              date: email.date,
-              time: email.time,
-            });
+            if (!email.hidden) {
+              threadMarkup += renderEmail({
+                id: uniqueId(),
+                preview: striptags(email.text).substr(0, 200),
+                from: htmlEntities.encode(email.from),
+                to: email.to.map(to => htmlEntities.encode(to)),
+                cc: (email.cc && email.cc.map(cc => htmlEntities.encode(cc))) || [],
+                text: email.text,
+                subject: email.subject,
+                date: email.date,
+                time: email.time,
+              });
+            }
           });
 
           return `

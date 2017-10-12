@@ -1,15 +1,8 @@
 .thread {
   @include limited-media-max();
-  box-shadow: 0 0 2px $color-boulder;
+  box-shadow: 0 0 1px $color-boulder;
   margin-top: 1.5rem;
   position: relative;
-
-  &__title {
-    font-family: $font-family-email;
-    font-size: 1rem;
-    margin: 0 1rem;
-    padding: .7rem 0;
-  }
 
   &__list {
     list-style: none;
@@ -17,7 +10,7 @@
     padding: 0;
   }
 
-  &__list-item {
+  &__list-item:not(:first-child):not(:last-child) {
     border-top: 1px solid $color-mercury;
     outline: none;
   }
