@@ -28,13 +28,24 @@
   }
 
   &__avatar {
-    background-color: $color-shuttle-gray;
+    background-color: white;
     border-radius: 50%;
     height: 2.5rem;
     left: 1rem;
     position: absolute;
     top: 1rem;
     width: 2.5rem;
+  }
+
+  &__avatar-image--iuventa {
+    fill: $color-shuttle-gray;
+  }
+
+  &__avatar-image--mrcc {
+    fill: $color-shuttle-gray;
+    height: 1.5rem;
+    margin: .5rem;
+    width: 1.5rem
   }
 
   &__subject {
