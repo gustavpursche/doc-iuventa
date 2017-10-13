@@ -16,7 +16,10 @@
 
   &--extended {
     @include content-media();
-    max-width: 60rem;
+
+    @include mq(desktop) {
+      max-width: 60rem;
+    }
   }
 
   > p {
