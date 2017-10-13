@@ -21,6 +21,10 @@
 
   > p {
     color: $color-tundora;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+
+    @include mq(tablet) {
+      font-size: 1.2rem;
+    }
   }
 }

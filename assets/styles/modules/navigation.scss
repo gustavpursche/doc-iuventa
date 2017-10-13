@@ -1,24 +1,45 @@
 .navigation {
-  box-shadow: 0 0 2px $color-boulder;
+  border-bottom: 1px solid $color-mercury;
+  border-top: 1px solid $color-mercury;
   color: $color-boulder;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-family: $font-family-sans-serif;
   font-size: 1rem;
+  justify-content: center;
   margin-bottom: 2rem;
   overflow-x: hidden;
   width: 100vw;
 
+  @include mq(tablet) {
+    flex-direction: row;
+  }
+
   &__entry {
     color: currentColor;
     display: flex;
-    margin: 0 1.2rem .75rem 1.2rem;
-    padding: .75rem 0 0 0;
+    font-size: .9rem;
+    justify-content: center;
+    margin: 0 1rem .5rem 1rem;
+    padding-top: .5rem;
     text-decoration: none;
+
+    @include mq(tablet) {
+      margin: 0 1.2rem .75rem 1.2rem;
+      padding-top: .75rem;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
+    }
+
+    & + & {
+      border-top: 1px solid $color-mercury;
+
+      @include mq(tablet) {
+        border-top: 0;
+      }
     }
   }
 
@@ -27,6 +48,7 @@
 
     &:before {
       content: "#";
+      margin-right: .05rem;
     }
   }
 }

@@ -18,7 +18,8 @@
   &__mission {
     color: $color-boulder;
     display: block;
-    font-size: .95rem;
+    font-size: 1rem;
+    margin-bottom: .5rem;
     padding-top: .8rem;
     position: relative;
 
@@ -29,7 +30,7 @@
       left: 0;
       position: absolute;
       top: 0;
-      width: 3rem;
+      width: 2rem;
     }
   }
 }

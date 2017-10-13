@@ -4,9 +4,7 @@
   font-family: $font-family-email;
   font-size: 1rem;
   margin-top: 10rem;
-  padding-bottom: 6rem;
-  padding-left: 1rem;
-  padding-top: 4rem;
+  padding: 4rem 1rem 6rem 1rem;
 
   @include mq(tablet) {
     padding-left: 0;

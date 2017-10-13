@@ -1,6 +1,8 @@
 .header {
-  background-color: rgb(0, 0, 0);
-  position: relative;
+  @include mq(tablet) {
+    background-color: rgb(0, 0, 0);
+    position: relative;
+  }
 
   &__image {
     line-height: 0;
@@ -13,15 +15,18 @@
   }
 
   &__content {
+    padding: 1rem .5rem 1.5rem .5rem;
+    text-align: center;
+
     @include mq(tablet) {
       background-image: linear-gradient(to top, rgba(12, 21, 32, 0.7), transparent);
       bottom: 0;
       color: white;
       left: 50%;
-      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding-top: 2rem;
       position: absolute;
-      text-align: center;
       transform: translateX(-50%);
       width: 100%;
     }
@@ -31,8 +36,8 @@
     font-family: $font-family-sans-serif;
     font-size: 1.8rem;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
 
     @include mq(small) {
       font-size: 2.4rem;
@@ -41,7 +46,6 @@
     @include mq(tablet) {
       font-size: 2.6rem;
       margin-bottom: .5rem;
-      margin-top: 0;
     }
 
     @include mq(desktop) {
@@ -53,13 +57,13 @@
 
   &__intro {
     font-family: $font-family-sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.3;
     margin-bottom: 0;
     margin-top: 0;
 
     @include mq(desktop) {
       display: inline-block;
-      line-height: 1.2;
       max-width: 42rem;
     }
   }
