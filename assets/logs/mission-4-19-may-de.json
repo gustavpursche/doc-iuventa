@@ -12,7 +12,8 @@
   },
 
   {
-    "06:55": "Mögliches <abbr title='Target Vessel'>TV</abbr> ist ein Fischer, Kurs auf zwei weitere potentielle <abbr title='Target Vessel'>TV</abbr>"
+    "06:55": "Mögliches <abbr title='Target Vessel'>TV</abbr> ist ein Fischer, Kurs auf zwei weitere potentielle <abbr title='Target Vessel'>TV</abbr>",
+    "hidden": true
   },
 
   {
@@ -33,7 +34,8 @@
   },
 
   {
-    "08:10": "Sichtkontakt zum <abbr title='Target Vessel'>TV</abbr>"
+    "08:10": "Sichtkontakt zum <abbr title='Target Vessel'>TV</abbr>",
+    "hidden": true
   },
 
   {
@@ -94,7 +96,8 @@
   },
 
   {
-    "10:15": "Anruf vom MRCC, Inhalt der letzte Mail mit dem zuständigen Beamten diskutiert"
+    "10:15": "Anruf vom MRCC, Inhalt der letzte Mail mit dem zuständigen Beamten diskutiert",
+    "hidden": true
   },
 
   {
@@ -102,11 +105,13 @@
   },
 
   {
-    "10:24": "Schwimmwesten an TV4 ausgeteilt (Holzboot, halbwegs stabiler Zustand, etwa 100 Personen)"
+    "10:24": "Schwimmwesten an TV4 ausgeteilt (Holzboot, halbwegs stabiler Zustand, etwa 100 Personen)",
+    "hidden": true
   },
 
   {
-    "10:29": "MRCC ruft an, Bestätigung welche der gemeldeteten Boote Iuventa in Sicht hat, mündlicher SITREP"
+    "10:29": "MRCC ruft an, Bestätigung welche der gemeldeteten Boote Iuventa in Sicht hat, mündlicher SITREP",
+    "hidden": true
   },
 
   {
@@ -119,11 +124,13 @@
   },
 
   {
-    "11:20": "Ein medizinischer Notfall vom TV 5 (blaues Schlauchboot, etwa 100 Personen, guter Zustand) an Bord genommen"
+    "11:20": "Ein medizinischer Notfall vom TV 5 (blaues Schlauchboot, etwa 100 Personen, guter Zustand) an Bord genommen",
+    "hidden": true
   },
 
   {
-    "11:25": "Update über die Situation von TV6 (weißes Schlauchboot, etwa 120 Personen, halbwegs stabiler Zustand)"
+    "11:25": "Update über die Situation von TV6 (weißes Schlauchboot, etwa 120 Personen, halbwegs stabiler Zustand)",
+    "hidden": true
   },
 
   {
@@ -131,12 +138,12 @@
   },
 
   {
-    "12:50": "1 Leichnam von TV5 geborgen",
-    "hidden": true
+    "12:50": "1 Leichnam von TV5 geborgen"
   },
 
   {
-    "13:00": "Tod des geborgenen Körpers durch Arzt bestätigt"
+    "13:00": "Tod des geborgenen Körpers durch Arzt bestätigt",
+    "hidden": true
   },
 
   {
@@ -144,7 +151,8 @@
   },
 
   {
-    "13:33": "Evakuierung von TV4 auf die Iuventa abgeschlossen"
+    "13:33": "Evakuierung von TV4 auf die Iuventa abgeschlossen",
+    "hidden": true
   },
 
   {
@@ -197,7 +205,8 @@
   },
 
   {
-    "18:35": "Anruf beim MRCC, diskutieren Sicherheitsbedenken in o.g. Email"
+    "18:35": "Anruf beim MRCC, diskutieren Sicherheitsbedenken in o.g. Email",
+    "hidden": true
   },
 
   {
@@ -210,7 +219,8 @@
   },
 
   {
-    "20:48": "RIB erreicht Port Russel, Arzt und Rettungsassistent sind an Bord, 4 medizinische Notfälle"
+    "20:48": "RIB erreicht Port Russel, Arzt und Rettungsassistent sind an Bord, 4 medizinische Notfälle",
+    "hidden": true
   },
 
   {
