@@ -76,10 +76,10 @@ if (ENV === 'production') {
 
 gulp.task('markup', [ 'styles', ], () => {
   return gulp.src('markup/**/*.html')
-    .pipe(replace('{{critical-css}}', (...args) => {
+    .pipe(replace('{{inline-css}}', (...args) => {
       return `
         <style type="text/css">
-          ${fs.readFileSync('dist/assets/styles/critical.css', 'utf-8')}
+          ${fs.readFileSync('dist/assets/styles/app.css', 'utf-8')}
         </style>
       `;
     }))
@@ -360,10 +360,8 @@ gulp.task('styles', () => {
   const vars = `
       $font-path: "${ASSET_PATH}/fonts/";
   `;
-  const critical = gulp.src('assets/styles/critical.scss');
-  const app = gulp.src('assets/styles/app.scss');
 
-  return merge(critical, app)
+  return gulp.src('assets/styles/app.scss')
       .pipe(header(vars))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.init()))
@@ -377,10 +375,6 @@ gulp.task('styles', () => {
       .pipe(gulpIf(ENV === 'production', cssnano()))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.write()))
       .pipe(gulp.dest('dist/assets/styles/'));
-});
-
-gulp.task('styles-inline', () => {
-
 });
 
 gulp.task('upload', ['build', ], () => {
