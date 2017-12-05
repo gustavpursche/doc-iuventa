@@ -2,7 +2,7 @@
   border-bottom: 1px solid $color-mercury;
   border-top: 1px solid $color-mercury;
   color: $color-boulder;
-  display: flex;
+  display: none;
   flex-direction: column;
   font-family: $font-family-sans-serif;
   font-size: 1rem;
@@ -12,13 +12,14 @@
   width: 100vw;
 
   @include mq(tablet) {
+    display: flex;
     flex-direction: row;
   }
 
   &__entry {
     color: currentColor;
     display: flex;
-    font-size: .9rem;
+    font-size: .85rem;
     justify-content: center;
     margin: 0 1rem .5rem 1rem;
     padding-top: .5rem;
@@ -27,6 +28,10 @@
     @include mq(tablet) {
       margin: 0 1.2rem .75rem 1.2rem;
       padding-top: .75rem;
+    }
+
+    @include mq(desktop) {
+      font-size: .95rem;
     }
 
     &:hover,
