@@ -6,14 +6,25 @@
   cursor: pointer;
   display: none;
   font-family: $font-family-sans-serif;
-  font-size: .9rem;
+  font-size: .85rem;
   left: 50%;
-  letter-spacing: .05rem;
+  letter-spacing: .02rem;
+  min-width: 90%;
   padding: .5rem 1rem;
   position: absolute;
   text-transform: uppercase;
   transform: translate(-50%, 50%);
   z-index: 100;
+
+  @include mq(tablet) {
+    font-size: .9rem;
+    letter-spacing: .05rem;
+    min-width: 0;
+  }
+
+  @include mq(desktop) {
+    font-size: .95rem;
+  }
 
   &:hover,
   &:focus {

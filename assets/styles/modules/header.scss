@@ -40,7 +40,7 @@
     margin-top: 0;
 
     @include mq(small) {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
     }
 
     @include mq(tablet) {
@@ -57,10 +57,14 @@
 
   &__intro {
     font-family: $font-family-sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.3;
     margin-bottom: 0;
     margin-top: 0;
+
+    @include mq(tablet) {
+      font-size: 1.1rem;
+    }
 
     @include mq(desktop) {
       display: inline-block;
