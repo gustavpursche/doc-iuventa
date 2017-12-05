@@ -12,6 +12,10 @@
       height: auto;
       width: 100%;
     }
+
+    > figcaption {
+      display: none;
+    }
   }
 
   &__content {
