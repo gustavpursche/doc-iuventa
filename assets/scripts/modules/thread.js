@@ -10,7 +10,7 @@ const expandThread = (container) => {
 };
 
 const getEmailContent = (item) => {
-  return item.querySelector('.email');
+  return item.getElementsByClassName('email')[0];
 };
 
 const closeAllBut = (except) => {
@@ -51,7 +51,7 @@ const init = (container) => {
     }
   };
 
-  ITEMS = [...container.querySelectorAll('.thread__list-item')];
+  ITEMS = [...container.getElementsByClassName('thread__list-item')];
 
   closeAllBut(ITEMS[0]);
   collapseThread(container);
