@@ -19,6 +19,15 @@
     }
   }
 
+  // Disable ::hover/::focus, because the emails are collapsed and cut off
+  .thread--collapsed &--collapsed {
+    &:hover,
+    &:focus {
+      background-color: $color-athens-gray;
+      cursor: default;
+    }
+  }
+
   &--collapsed &__body {
     display: none;
   }
