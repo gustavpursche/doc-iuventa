@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "gulp watch",
     "build": "gulp build",
-    "publish": "ENV='production' gulp upload"
+    "publish": "ENV='production' gulp upload",
+    "serve": "npx node-static -p 3001"
   },
   "repository": {
     "type": "git",
