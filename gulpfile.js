@@ -8,6 +8,7 @@ const fs = require('fs');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const gulpWebpack = require('webpack-stream');
+const gutil = require('gulp-util');
 const header = require('gulp-header');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
@@ -63,9 +64,23 @@ const cloudfrontConfig = {
 };
 
 const IMAGE_SIZES = {
-  aside: [ 300, 400, 600, ],
-  content: [ 400, 760, 980, ],
-  full: [ 400, 760, 980, 1200, 2000, ],
+  aside: {
+    srcset: [ 300, 400, 600, ],
+    sizes: `
+      (min-width: 768px) 300px,
+      100vw
+    `,
+  },
+  content: {
+    srcset: [ 400, 768, 980, ],
+    sizes: `
+      (min-width: 768px) 768px,
+      100vw
+    `,
+  },
+  full: {
+    srcset: [ 400, 768, 980, 1200, 2000, ]
+  },
 };
 
 let ASSET_PATH = '/dist/assets';
@@ -264,12 +279,16 @@ gulp.task('markup', [ 'styles', ], () => {
             caption = null;
           };
 
-          const getSourceSet = fileName => {
-            const sortedSizes = Array.from(IMAGE_SIZES[attrs.type]).reverse();
+          const getSourceSet = (fileName, type) => {
+            const sortedSizes = Array.from(IMAGE_SIZES[type].srcset).reverse();
 
             return sortedSizes.map(width => `
-              ${ASSET_PATH}/images/${attrs.name}-${width}.jpg ${width}w
+              ${ASSET_PATH}/images/${fileName}-${width}.jpg ${width}w
             `).join(', ');
+          };
+
+          const getSizes = type => {
+            return IMAGE_SIZES[type].sizes || '100vw';
           };
 
           const captionMarkup = caption ? `
@@ -281,8 +300,9 @@ gulp.task('markup', [ 'styles', ], () => {
           return `
             <figure class="${attrs.class || 'image'} image--${attrs.type}">
               <img src="${ASSET_PATH}/images/${attrs.name}-2000.jpg"
-                   srcset="${getSourceSet(attrs.name)}"
-                   alt="" />
+                   srcset="${getSourceSet(attrs.name, attrs.type)}"
+                   sizes="${getSizes(attrs.type)}"
+                   alt="${ caption || '' }" />
 
               ${captionMarkup}
             </figure>
@@ -305,13 +325,13 @@ gulp.task('images', () => {
   };
   const allImageSizes =
     Object.keys(IMAGE_SIZES)
-      .map(type => IMAGE_SIZES[type])
+      .map(type => IMAGE_SIZES[type].srcset)
       // flatten
       .reduce((a, b) => a.concat(Array.isArray(b) ? b : b), [])
       // unique
       .filter((elem, pos, arr) => arr.indexOf(elem) === pos);
 
-  console.log('Debug: collected image sizes:', allImageSizes);
+  gutil.log('Image sizes:', allImageSizes);
 
   allImageSizes.forEach(width => {
     const options = Object.assign({}, defaults, { width });
