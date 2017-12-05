@@ -335,7 +335,7 @@ gulp.task('images', () => {
 
   allImageSizes.forEach(width => {
     const options = Object.assign({}, defaults, { width });
-    const stream = gulp.src('assets/images/*.jpg')
+    const stream = gulp.src('assets/images/**/*.jpg')
         .pipe(parallelize(
           resize(options),
           os.cpus().length
@@ -357,12 +357,9 @@ gulp.task('images', () => {
     imageStream.add(stream);
   });
 
-  const socialMedia = gulp.src('assets/images/social-media/**/*.jpg')
-                        .pipe(gulp.dest('dist/assets/images/social-media/'));
-
   imageStream.pipe(gulp.dest('dist/assets/images'))
 
-  return merge(imageStream, socialMedia);
+  return imageStream;
 });
 
 gulp.task('scripts', () => {
