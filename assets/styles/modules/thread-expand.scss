@@ -17,7 +17,7 @@
 
   &:hover,
   &:focus {
-    // TODO
+    background-color: darken($color-mirage, 15%);
   }
 
   .thread--collapsed & {
