@@ -19,7 +19,7 @@ var until = function (elem, selector, filter) {
 };
 
 const init = (container) => {
-  container.addEventListener('click touchstart', event => {
+  container.addEventListener('click', event => {
     const HIDDEN_CLASS = 'log__entry--hidden';
 
     if (event.target && event.target.classList.contains(HIDDEN_CLASS)) {
