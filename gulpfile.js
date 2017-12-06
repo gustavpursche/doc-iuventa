@@ -98,7 +98,7 @@ gulp.task('markup', [ 'styles', ], () => {
         </style>
       `;
     }))
-    .pipe(replace(/{{([a-z]+) ([a-z]+=".*")}}/gi, (...args) => {
+    .pipe(replace(/{{([a-z]+)\s+?([a-z]+=".*")}}/gi, (...args) => {
       const [match, type, rawAttrs, position] = args;
       const attrs = rawAttrs.split(' ').reduce((acc, attr) => {
         const [key, value] = attr.split('=');
@@ -107,6 +107,10 @@ gulp.task('markup', [ 'styles', ], () => {
       }, {});
 
       switch(type) {
+        case 'assetpath':
+          return ASSET_PATH;
+          break;
+
         case 'asset':
           const package = require('./package.json');
           const cacheBust = `?version=${package.version}`;
