@@ -1,6 +1,6 @@
 [
   {
-    "04:11": "<abbr title='Positionsreport'>POSREP</abbr> an das MRCC gesendet"
+    "04:11": "<span class='hint--top hint--medium' aria-label='Positionsreport'>POSREP</span> an das MRCC gesendet"
   },
 
   {
@@ -8,21 +8,21 @@
   },
 
   {
-    "04:20": "Anruf des MRCC, haben einen <abbr title='Das MRCC ist oft sehr gut über die Boote informiert, die von der libyschen Küste ablegen. Diese Informationen gibt das MRCC an die Schiffe in der Such- und Rettungszone weiter. Dazu gibt es drei Wege: per Satelitentelefon, per Email und per INMARSAT C, einer Art Fax.'> Notruf von einem Boot</abbr> bekommen, unbekannte Position, unbekannte Ablegeort, zwischen 23:00 und 24:00 Uhr am 18.6. abgelegt, vermutlich Schlauchboot"
+    "04:20": "Anruf des MRCC, haben einen <span class='hint--top hint--medium' aria-label='Das MRCC ist oft sehr gut über die Boote informiert, die von der libyschen Küste ablegen. Diese Informationen gibt das MRCC an die Schiffe in der Such- und Rettungszone weiter. Dazu gibt es drei Wege: per Satelitentelefon, per Email und per INMARSAT C, einer Art Fax.'> Notruf von einem Boot</span> bekommen, unbekannte Position, unbekannte Ablegeort, zwischen 23:00 und 24:00 Uhr am 18.6. abgelegt, vermutlich Schlauchboot"
   },
 
   {
-    "06:55": "Mögliches <abbr title='Target Vessel'>TV</abbr> ist ein Fischer, Kurs auf zwei weitere potentielle <abbr title='Target Vessel'>TV</abbr>",
+    "06:55": "Mögliches <span class='hint--top hint--medium' aria-label='Target Vessel'>TV</span> ist ein Fischer, Kurs auf zwei weitere potentielle <span class='hint--top hint--medium' aria-label='Target Vessel'>TV</span>",
     "hidden": true
   },
 
   {
-    "07:40": "<abbr title='Situationsreport'>SITREP</abbr> an das MRCC gesendet, nach Updates vom Schlauchboot und der generellen Situation gefragt",
+    "07:40": "<span class='hint--top hint--medium' aria-label='Situationsreport'>SITREP</span> an das MRCC gesendet, nach Updates vom Schlauchboot und der generellen Situation gefragt",
     "hidden": true
   },
 
   {
-    "07:56": "Funkkontakt mit <abbr title='Aufklärungsflugzeug'>Sea Gull</abbr>, informiert über ein kleines Holzboot mit etwa 20 Personen, <abbr title='In aller Regel tragen die Flüchtlinge keine Schwimmwesten. Gelegentlich kommt es jedoch vor, dass sie von den Schleusern in Libyen solche für viel Geld verkauft bekommen. Meist sind diese jedoch nutzlos. Selbst Schwimmwesten, die mit Sägespänen gefüllt waren wurden schon von NGOs gefunden - ein tödliches Versprechen von Sicherheit'>teilweise ausgerüstet mit Schwimmwesten</abbr> auf Position: 33°01,7'N 012°24,0'E"
+    "07:56": "Funkkontakt mit <span class='hint--top hint--medium' aria-label='Aufklärungsflugzeug'>Sea Gull</span>, informiert über ein kleines Holzboot mit etwa 20 Personen, <span class='hint--top hint--medium' aria-label='In aller Regel tragen die Flüchtlinge keine Schwimmwesten. Gelegentlich kommt es jedoch vor, dass sie von den Schleusern in Libyen solche für viel Geld verkauft bekommen. Meist sind diese jedoch nutzlos. Selbst Schwimmwesten, die mit Sägespänen gefüllt waren wurden schon von NGOs gefunden - ein tödliches Versprechen von Sicherheit'>teilweise ausgerüstet mit Schwimmwesten</span> auf Position: 33°01,7'N 012°24,0'E"
   },
 
   {
@@ -30,16 +30,16 @@
   },
 
   {
-    "08:05": "<abbr title='Der RIB Alarm wird ausgelöst, wenn ein Flüchtlingsboot in Sichtweite oder auf dem Radar ist. Er weckt die gesamte Crew auf und bereitet sie auf den bevorstehenden Einsatz vor. Mit dem Alarm, findet die Crew sich an Deck ein und nach einem kurzen Briefing durch den Einsatzleiter beginnt die Operation.'>RIB</abbr> Alarm"
+    "08:05": "<span class='hint--top hint--medium' aria-label='Der RIB Alarm wird ausgelöst, wenn ein Flüchtlingsboot in Sichtweite oder auf dem Radar ist. Er weckt die gesamte Crew auf und bereitet sie auf den bevorstehenden Einsatz vor. Mit dem Alarm, findet die Crew sich an Deck ein und nach einem kurzen Briefing durch den Einsatzleiter beginnt die Operation.'>RIB</span> Alarm"
   },
 
   {
-    "08:10": "Sichtkontakt zum <abbr title='Target Vessel'>TV</abbr>",
+    "08:10": "Sichtkontakt zum <span class='hint--top hint--medium' aria-label='Target Vessel'>TV</span>",
     "hidden": true
   },
 
   {
-    "08:18": "<abbr title='Das Beiboot (RIB ist Rigid Hull Inflatable Boat) ist ein festes Schlauchboot mit Außenbootmotor, welches im Einsatz für den Erstkontakt, die Ausgabe von Schwimmwesten und den Shuttle oder das Ziehen der Flüchtlingsboote zuständig ist. Seine Crew besteht aus drei Personen; dem Fahrer, der Kontaktperson und dem Teamleiter. Es wird auf der Iuventa transportiert und für den Einsatz ins Wasser gekrant)'>Iuventa Rescue</abbr> im Wasser"
+    "08:18": "<span class='hint--top hint--medium' aria-label='Das Beiboot (RIB ist Rigid Hull Inflatable Boat) ist ein festes Schlauchboot mit Außenbootmotor, welches im Einsatz für den Erstkontakt, die Ausgabe von Schwimmwesten und den Shuttle oder das Ziehen der Flüchtlingsboote zuständig ist. Seine Crew besteht aus drei Personen; dem Fahrer, der Kontaktperson und dem Teamleiter. Es wird auf der Iuventa transportiert und für den Einsatz ins Wasser gekrant)'>Iuventa Rescue</span> im Wasser"
   },
 
   {
@@ -53,7 +53,7 @@
   },
 
   {
-    "09:00": "<abbr title='Aufklärungsflugzeug'>Moonbird</abbr> informiert uns über 6 Schlauchboote, wir nehmen Kurs in die Richtung auf, Iuventa Rescue, Iuventa und <abbr title='kleines Beiboot'>Lilly</abbr> in Vollgas, Spanischer Helikopter ist über den Schlauchbooten"
+    "09:00": "<span class='hint--top hint--medium' aria-label='Aufklärungsflugzeug'>Moonbird</span> informiert uns über 6 Schlauchboote, wir nehmen Kurs in die Richtung auf, Iuventa Rescue, Iuventa und <span class='hint--top hint--medium' aria-label='kleines Beiboot'>Lilly</span> in Vollgas, Spanischer Helikopter ist über den Schlauchbooten"
   },
 
   {
@@ -81,7 +81,7 @@
   },
 
   {
-    "09:50": "<abbr title='Situationsreport'>SITREP</abbr> an das MRCC, Information über die 9 von Moonbird gefundenen Boote (Email um 10:10 Uhr gesendet)",
+    "09:50": "<span class='hint--top hint--medium' aria-label='Situationsreport'>SITREP</span> an das MRCC, Information über die 9 von Moonbird gefundenen Boote (Email um 10:10 Uhr gesendet)",
     "hidden": true
   },
 
@@ -120,7 +120,7 @@
   },
 
   {
-    "11:07": "<abbr title='Auch die italienische Küstenwache ist aktiv an den Such- und Rettungsoperationen vor der libyschen Küste beteiligt und steht stets in engem Kontakt zu den NGO Schiffen'>ITCG</abbr> ruft an, Update über aktuelle Situation, erhaltene <abbr title='geplante Ankunftzeit'>ETA</abbr> in etwa 2 Stunden"
+    "11:07": "<span class='hint--top hint--medium' aria-label='Auch die italienische Küstenwache ist aktiv an den Such- und Rettungsoperationen vor der libyschen Küste beteiligt und steht stets in engem Kontakt zu den NGO Schiffen'>ITCG</span> ruft an, Update über aktuelle Situation, erhaltene <span class='hint--top hint--medium' aria-label='geplante Ankunftzeit'>ETA</span> in etwa 2 Stunden"
   },
 
   {
@@ -134,7 +134,7 @@
   },
 
   {
-    "12:30": "Erhalten Informationen von EU Marineschiff F86 Canarias, benannt als <abbr title='On Scene Coordinatior'>OSC</abbr>, ETA zur Position etwa 1h"
+    "12:30": "Erhalten Informationen von EU Marineschiff F86 Canarias, benannt als <span class='hint--top hint--medium' aria-label='On Scene Coordinatior'>OSC</span>, ETA zur Position etwa 1h"
   },
 
   {
@@ -210,7 +210,7 @@
   },
 
   {
-    "20:04": "Erhalten Informationen über einen medizinischen Notfall an Bord von <abbr title='Tanker: die großen Tankschiffe haben zwar viele Kapazitäten, was Platz für die geretteten Menschen angeht, jedoch keinerlei Personal an Bord, welches sich zum Beispiel um medizinische Notfälle kümmern kann. Daher werden hier häufig die Crews von NGO Schiffen angefordert.'>Port Russel</abbr> sowie Menschen im Wasser in deren Nähe"
+    "20:04": "Erhalten Informationen über einen medizinischen Notfall an Bord von <span class='hint--top hint--medium' aria-label='Tanker: die großen Tankschiffe haben zwar viele Kapazitäten, was Platz für die geretteten Menschen angeht, jedoch keinerlei Personal an Bord, welches sich zum Beispiel um medizinische Notfälle kümmern kann. Daher werden hier häufig die Crews von NGO Schiffen angefordert.'>Port Russel</span> sowie Menschen im Wasser in deren Nähe"
   },
 
   {

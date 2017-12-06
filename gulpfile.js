@@ -382,7 +382,10 @@ gulp.task('styles', () => {
       $font-path: "${ASSET_PATH}/fonts/";
   `;
 
-  return gulp.src('assets/styles/app.scss')
+  return gulp.src([
+    'node_modules/hint.css/hint.css',
+    'assets/styles/app.scss',
+  ])
       .pipe(header(vars))
       .pipe(sass().on('error', sass.logError))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.init()))
@@ -395,6 +398,7 @@ gulp.task('styles', () => {
       }))
       .pipe(gulpIf(ENV === 'production', cssnano()))
       .pipe(gulpIf(ENV !== 'production', sourcemaps.write()))
+      .pipe(concat('app.css'))
       .pipe(gulp.dest('dist/assets/styles/'));
 });
 

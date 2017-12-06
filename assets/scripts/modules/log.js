@@ -19,7 +19,7 @@ var until = function (elem, selector, filter) {
 };
 
 const init = (container) => {
-  container.addEventListener('click', event => {
+  container.addEventListener('click touchstart', event => {
     const HIDDEN_CLASS = 'log__entry--hidden';
 
     if (event.target && event.target.classList.contains(HIDDEN_CLASS)) {
@@ -29,6 +29,18 @@ const init = (container) => {
         event.target,
         ...until(event.target, `.log__entry:not(.${HIDDEN_CLASS})`),
       ].forEach(el => el.classList.remove(HIDDEN_CLASS));
+    }
+
+    // CSS tooltips
+    if (event.target && event.target.classList.contains('hint--medium')) {
+      event.target.classList.toggle('hint--always');
+
+      // make sure there is never more than one tooltip open
+      [...container.querySelectorAll('.hint--medium')].forEach(el => {
+        if (el !== event.target) {
+          el.classList.remove('hint--always');
+        }
+      });
     }
   });
 };
