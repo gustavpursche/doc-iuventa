@@ -26,11 +26,26 @@ const closeItem = (item) => {
 };
 
 const openItem = (item) => {
-  return getEmailContent(item).classList.remove(COLLAPSED_CSS_CLASS);
+  const target = getEmailContent(item);
+
+  target.classList.remove(COLLAPSED_CSS_CLASS);
+
+  setTimeout(() => {
+    const { top } = target.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset || document.body.scrollTop;
+
+    if (top) {
+      window.scrollTo(0, top + scrollY - 60);
+    }
+  }, 20);
+
+  return;
 };
 
 const init = (container) => {
   const open = (event) => {
+    event.preventDefault();
+
     const { target } = event;
     const closest = target.closest('.thread__list-item');
     let item;

@@ -61,9 +61,15 @@
 
   &__avatar-image--mrcc {
     fill: $color-shuttle-gray;
-    height: 1.5rem;
-    margin: .5rem;
-    width: 1.5rem
+    height: 1rem;
+    margin: .25rem;
+    width: 1rem;
+
+    @include mq(tablet) {
+      height: 2.5rem;
+      margin: .5rem;
+      width: 2.5rem;
+    }
   }
 
   &__subject {
@@ -91,7 +97,11 @@
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 80%;
+    width: 98%;
+
+    @include mq(tablet) {
+      width: 80%;
+    }
   }
 
   &__body {
