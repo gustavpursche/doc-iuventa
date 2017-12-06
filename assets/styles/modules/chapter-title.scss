@@ -3,11 +3,11 @@
   font-size: 1.6rem;
   line-height: 1.2;
   margin-bottom: 1rem;
-  margin-top: 4rem;
+  padding-top: 4rem;
 
   @include mq(small) {
     font-size: 1.8rem;
-    margin-top: 6rem;
+    padding-top: 6rem;
   }
 
   @include mq(tablet) {

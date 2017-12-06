@@ -1,4 +1,5 @@
 .navigation {
+  background-color: white;
   border-bottom: 1px solid $color-mercury;
   border-top: 1px solid $color-mercury;
   color: $color-boulder;
@@ -8,8 +9,10 @@
   font-size: 1rem;
   justify-content: center;
   margin-bottom: 2rem;
-  overflow-x: hidden;
+  position: sticky;
+  top: 0;
   width: 100vw;
+  z-index: 150;
 
   @include mq(tablet) {
     display: flex;
@@ -17,16 +20,18 @@
   }
 
   &__entry {
+    border-bottom: 3px solid white;
     color: currentColor;
     display: flex;
     font-size: .85rem;
     justify-content: center;
-    margin: 0 1rem .5rem 1rem;
+    margin: 0 1rem .2rem 1rem;
+    padding-bottom: .3rem;
     padding-top: .5rem;
     text-decoration: none;
 
     @include mq(tablet) {
-      margin: 0 1.2rem .75rem 1.2rem;
+      margin: 0 1.2rem .55rem 1.2rem;
       padding-top: .75rem;
     }
 
@@ -38,6 +43,11 @@
     &:focus {
       color: darken($color-boulder, 20%);
       text-decoration: none;
+    }
+
+    &--active {
+      border-color: $color-cod-gray;
+      color: $color-cod-gray;
     }
 
     & + & {
