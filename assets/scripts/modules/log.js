@@ -42,6 +42,8 @@ const init = (container) => {
         }
       });
     }
+
+    // TODO close tooltips on window.click
   });
 };
 
