@@ -12,14 +12,14 @@
 
   @include mq(tablet) {
     font-size: 2.4rem;
-    margin-top: 10rem;
+    padding-top: 8rem;
   }
 
   &__mission {
     color: $color-boulder;
     display: block;
     font-size: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: .3rem;
     padding-top: .8rem;
     position: relative;
 

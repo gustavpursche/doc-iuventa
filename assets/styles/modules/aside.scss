@@ -6,7 +6,7 @@
     float: right;
     margin-bottom: 2rem;
     margin-left: 2rem;
-    margin-top: 0;
+    margin-top: 2rem;
     width: 12rem;
   }
 
@@ -17,8 +17,8 @@
   @include mq(wide) {
     margin-bottom: 0;
     margin-left: 0;
-    margin-right: -20rem;
-    width: 18rem;
+    margin-right: -25rem;
+    width: 24rem;
   }
 
   &--start {

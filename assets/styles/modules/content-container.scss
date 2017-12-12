@@ -24,10 +24,14 @@
 
   > p {
     color: $color-tundora;
-    font-size: 1.05rem;
+    font-size: 1.125rem;
 
-    @include mq(tablet) {
+    @include mq(medium) {
       font-size: 1.2rem;
+    }
+
+    @include mq(wide) {
+      font-size: 1.375rem;
     }
 
     > a {
