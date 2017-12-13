@@ -34,6 +34,13 @@
     }
   }
 
+  &__credits {
+    a {
+      border-bottom: 1px solid lighten($color-mirage, 8%);
+      text-decoration: none;
+    }
+  }
+
   a {
     color: currentColor;
   }
