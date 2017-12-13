@@ -21,6 +21,8 @@
 
   // Disable ::hover/::focus, because the emails are collapsed and cut off
   .thread--collapsed &--collapsed {
+    user-select: none;
+
     &:hover,
     &:focus {
       background-color: $color-athens-gray;

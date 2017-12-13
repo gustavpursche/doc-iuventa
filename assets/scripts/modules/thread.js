@@ -48,6 +48,7 @@ const init = (container) => {
 
     const { target } = event;
     const closest = target.closest('.thread__list-item');
+    const thread = target.closest('.thread');
     let item;
 
     if (target.matches('.thread__list-item')) {
@@ -57,10 +58,10 @@ const init = (container) => {
     }
 
     if (target.matches('.thread-expand')) {
-      expandThread(target.closest('.thread'));
+      expandThread(thread);
     }
 
-    if (item) {
+    if (item && !thread.classList.contains('thread--collapsed')) {
       openItem(item);
       closeAllBut(item);
     }
