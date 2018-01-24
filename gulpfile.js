@@ -93,7 +93,7 @@ if (ENV === 'production') {
   ASSET_PATH = 'https://cdn.jib-collective.net/iuventa/dist/assets';
 }
 
-gulp.task('markup', [ 'styles', ], () => {
+gulp.task('markup', ['styles'], () => {
   return gulp.src('markup/**/*.html')
     .pipe(replace('{{inline-css}}', (...args) => {
       return `
@@ -435,7 +435,7 @@ gulp.task('upload', ['build', ], () => {
 });
 
 gulp.task('watch', ['build',], () => {
-  gulp.watch('assets/styles/**/*', ['styles']);
+  gulp.watch('assets/styles/**/*', ['markup']);
   gulp.watch('assets/scripts/**/*', ['scripts']);
   gulp.watch('assets/images/*.jpg', ['images']);
   gulp.watch([
