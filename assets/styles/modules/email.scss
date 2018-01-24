@@ -146,4 +146,14 @@
       top: 1rem;
     }
   }
+
+  &__footer {
+    opacity: .4;
+
+    &:before {
+      content: '--';
+      display: block;
+      padding: .3rem 0;
+    }
+  }
 }
