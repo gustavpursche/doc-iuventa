@@ -384,6 +384,11 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('dist/assets/fonts/'));
 });
 
+gulp.task('documents', () => {
+  return gulp.src('assets/documents/**/*')
+    .pipe(gulp.dest('dist/assets/documents/'));
+});
+
 gulp.task('styles', () => {
   const vars = `
       $font-path: "${ASSET_PATH}/fonts/";
@@ -409,7 +414,7 @@ gulp.task('styles', () => {
       .pipe(gulp.dest('dist/assets/styles/'));
 });
 
-gulp.task('upload', ['build', ], () => {
+gulp.task('upload', ['build'], () => {
   let publisher = awspublish.create(awsConfig.s3);
   const cacheTime = (60 * 60 * 24) * 14; // 14 days
   const awsHeaders = {
@@ -445,6 +450,7 @@ gulp.task('watch', ['build',], () => {
 });
 
 gulp.task('build', [
+  'documents',
   'fonts',
   'images',
   'scripts',
