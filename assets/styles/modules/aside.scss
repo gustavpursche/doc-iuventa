@@ -16,8 +16,8 @@
   }
 
   @include mq(desktopwide) {
-    margin-right: -20rem;
-    width: 26rem;
+    margin-right: -26rem;
+    width: 30rem;
   }
 
   @include mq(wide) {
@@ -37,5 +37,9 @@
     @include mq(wide) {
       margin-left: -4rem;
     }
+  }
+
+  .image + .image {
+    margin-top: 1.5rem;
   }
 }
