@@ -1,6 +1,7 @@
 [
   {
-    "04:11": "<span class='hint--top hint--medium' aria-label='Positionsreport'>POSREP</span> an das MRCC gesendet"
+    "04:11": "<span class='hint--top hint--medium' aria-label='Positionsreport'>POSREP</span> an das MRCC gesendet",
+    "hidden": true
   },
 
   {
@@ -147,7 +148,7 @@
   },
 
   {
-    "13:30": "F86 und CP 941 (italienisches Küstenwachen Schiff) auf Position, erhalten Anweisung von F86 die Menschen auf den Booten zu beruhigen"
+    "13:30": "F86 und <span class='hint--top hint--medium' aria-label='Schiff der italienischen Küstenwache'>CP 941</span> auf Position, erhalten Anweisung von F86 die Menschen auf den Booten zu beruhigen"
   },
 
   {
@@ -156,7 +157,7 @@
   },
 
   {
-    "14:10": "In Absprache mit OSC Schwimmwesten an TV7 ausgeteilt (weißes Schlauchboot, etwa 130 Menschen, 15 Frauen, davon 2-3 schwanger, 2 Kinder)"
+    "14:10": "In Absprache mit <span class='hint--top hint--medium' aria-label='On Scene Coordinator'>OSC</span> Schwimmwesten an TV7 ausgeteilt (weißes Schlauchboot, etwa 130 Menschen, 15 Frauen, davon 2-3 schwanger, 2 Kinder)"
   },
 
   {
@@ -197,7 +198,7 @@
   },
 
   {
-    "18:30": "Langsam Kurs Richtung Norden, Deck wird gereinigt, Schwimmwesten gepackt, Raft (Rettungsinsel) wird seitlich gezogen, RIB folgt Iuventa"
+    "18:30": "Langsam Kurs Richtung Norden, Deck wird gereinigt, Schwimmwesten gepackt, <span class='hint--top hint--medium' aria-label='Rettungsinsel'>Raft</span> wird seitlich gezogen, RIB folgt Iuventa"
   },
 
   {
