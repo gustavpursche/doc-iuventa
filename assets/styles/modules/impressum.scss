@@ -7,8 +7,8 @@
   padding: 4rem 1rem 6rem 1rem;
 
   @include mq(tablet) {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   @include mq(desktop) {
