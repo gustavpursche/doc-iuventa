@@ -15,17 +15,17 @@
   }
 
   &__mission {
-    color: $color-boulder;
+    color: $color-shuttle-gray;
     display: block;
     font-size: 1rem;
-    margin-bottom: .3rem;
+    margin-bottom: .8rem;
     padding-top: .8rem;
     position: relative;
 
     &:before {
-      background-color: $color-boulder;
+      background-color: $color-shuttle-gray;
       content: ' ';
-      height: .25rem;
+      height: .2rem;
       left: 0;
       position: absolute;
       top: 0;
