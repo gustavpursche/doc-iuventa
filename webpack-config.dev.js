@@ -5,6 +5,7 @@ module.exports = {
     app: path.resolve(__dirname, 'assets', 'scripts', 'app.js'),
   },
   devtool: 'source-map',
+  mode: 'development',
   output: {
     filename: '[name].js',
   },
