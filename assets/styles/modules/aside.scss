@@ -34,8 +34,12 @@
       margin-top: 2rem;
     }
 
+    @include mq(desktop) {
+      margin-left: -8rem;
+    }
+
     @include mq(wide) {
-      margin-left: -4rem;
+      margin-left: -12rem;
     }
   }
 
