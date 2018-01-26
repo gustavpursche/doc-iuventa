@@ -33,21 +33,3 @@ p {
     margin-top: 2.5rem;
   }
 }
-
-a,
-a:active,
-a:visited {
-  border-bottom: 1px solid rgba($color-gray-bright, .3);
-  color: $color-gray-bright;
-  text-decoration: none;
-  transition: all ease 0.3s;
-}
-
-a:focus,
-a:hover,
-a:active:focus,
-a:active:hover,
-a:visited:focus,
-a:visited:hover {
-  border-color: $color-gray-bright;
-}
