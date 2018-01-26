@@ -19,18 +19,16 @@
   }
 
   &__content {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 1rem .5rem 1.5rem .5rem;
-    text-align: center;
+    padding: 1rem .5rem 1.5rem 1rem;
 
     @include mq(tablet) {
       background-image: linear-gradient(to top, rgba(12, 21, 32, 0.85), transparent);
       bottom: 0;
       color: white;
       left: 50%;
-      padding-bottom: .8rem;
+      padding-bottom: .5rem;
       padding-left: 1rem;
       padding-right: 1rem;
       padding-top: 2rem;
@@ -46,6 +44,7 @@
     line-height: 1.2;
     margin-bottom: 1rem;
     margin-top: 0;
+    margin-left: 11rem;
     max-width: 50rem;
 
     @include mq(small) {
@@ -67,6 +66,7 @@
     font-family: $font-family-sans-serif;
     font-size: 1.15rem;
     line-height: 1.45;
+    margin-left: 11rem;
     max-width: 42rem;
 
     @include mq(tablet) {
@@ -82,12 +82,11 @@
 
   &__date {
     display: block;
-    font-size: .9rem;
+    font-size: 1rem;
     padding-top: 2rem;
     position: relative;
 
     @include mq(tablet) {
-      font-size: .7rem;
       padding-top: .75rem;
     }
 
@@ -96,10 +95,9 @@
     }
 
     &:before {
-      border-left: 1px solid currentColor;
+      border-left: 2px solid currentColor;
       content: '';
       height: .8rem;
-      left: calc(50% - 1px);
       position: absolute;
       top: .8rem;
       width: 0;

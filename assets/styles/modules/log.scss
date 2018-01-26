@@ -1,9 +1,11 @@
 .log {
   @include limited-media-max();
-  background-color: $color-athens-gray;
+  background-color: $color-tundora;
+  color: $color-mercury;
   font-family: $font-family-monospace;
   margin-left: -1rem;
   margin-right: -1rem;
+  margin-top: 1.5rem;
   padding: 1.5rem 1rem;
 
   @include mq(tablet) {
@@ -46,13 +48,13 @@
 
     @include mq(tablet) {
       font-size: .9rem;
-      padding-left: 8rem;
+      padding-left: 5rem;
     }
 
     &--hidden {
       &:before {
-        background-color: $color-athens-gray;
-        border: .1rem solid $color-shuttle-gray;
+        background-color: $color-tundora;
+        border: .1rem solid $color-mercury;
         border-radius: 50%;
         content: '…';
         cursor: pointer;
@@ -71,7 +73,7 @@
       &:hover,
       &:focus {
         &:before {
-          background-color: $color-shuttle-gray;
+          background-color: $color-mercury;
           color: white;
         }
       }
@@ -105,7 +107,7 @@
   }
 
   &__entry-content {
-    border-left: .15rem solid $color-shuttle-gray;
+    border-left: .15rem solid $color-mercury;
     margin-bottom: 0;
     margin-top: 0;
     padding-bottom: 1rem;
@@ -120,8 +122,8 @@
     }
 
     &:before {
-      background-color: $color-athens-gray;
-      border: .15rem solid $color-shuttle-gray;
+      background-color: $color-tundora;
+      border: .15rem solid $color-mercury;
       border-radius: 50%;
       content: '';
       height: .5rem;
@@ -133,6 +135,7 @@
 
     .hint--medium {
       background-color: $color-laser-lemon;
+      color: $color-tundora;
       cursor: pointer;
       display: inline;
       padding-left: .2rem;
@@ -142,7 +145,7 @@
   }
 
   &__entry:last-child &__entry-content:last-child {
-    border-color: $color-athens-gray;
-    padding-bottom: 0;
+    border-color: $color-mercury;
+    padding-bottom: 5rem;
   }
 }

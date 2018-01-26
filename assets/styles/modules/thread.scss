@@ -1,6 +1,7 @@
 .thread {
   @include limited-media-max();
   box-shadow: 0 0 1px $color-boulder;
+  margin-bottom: 5rem;
   margin-top: 1.5rem;
   position: relative;
 

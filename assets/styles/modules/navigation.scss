@@ -2,13 +2,13 @@
   background-color: white;
   border-bottom: 1px solid $color-mercury;
   border-top: 1px solid $color-mercury;
-  color: $color-boulder;
+  color: $color-shuttle-gray;
   display: none;
   flex-direction: column;
   font-family: $font-family-sans-serif;
   font-size: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   position: sticky;
   top: 0;
   width: 100vw;
@@ -46,6 +46,7 @@
     &:focus {
       color: darken($color-boulder, 20%);
       text-decoration: none;
+      transition: all ease .3s;
     }
 
     &--active {
