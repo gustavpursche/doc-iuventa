@@ -24,3 +24,37 @@
   `gulpfile.js`
 
 - Run `npm run publish`
+
+## Fonts
+
+All fonts are subsetted:
+
+```
+pyftsubset ./assets/fonts/yrsa-regular.ttf \
+    --unicodes="U+0020-007A,U+00D6,U+00C4,U+00E4,U+00DC, U+00FC, U+00D6, U+00F6, U+00DF" \
+    --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap \
+    --notdef-glyph --notdef-outline --recommended-glyphs \
+    --name-IDs='*' --name-legacy --name-languages='*' \
+    --with-zopfli
+
+pyftsubset ./assets/fonts/ubuntu-mono.ttf \
+    --unicodes="U+0020-007A,U+00D6,U+00C4,U+00E4,U+00DC, U+00FC, U+00D6, U+00F6, U+00DF" \
+    --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap \
+    --notdef-glyph --notdef-outline --recommended-glyphs \
+    --name-IDs='*' --name-legacy --name-languages='*' \
+    --with-zopfli
+
+pyftsubset ./assets/fonts/open-sans-condensed-bold.ttf \
+    --unicodes="U+0020-007A,U+00D6,U+00C4,U+00E4,U+00DC, U+00FC, U+00D6, U+00F6, U+00DF" \
+    --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap \
+    --notdef-glyph --notdef-outline --recommended-glyphs \
+    --name-IDs='*' --name-legacy --name-languages='*' \
+    --with-zopfli
+
+pyftsubset ./assets/fonts/open-sans-regular.ttf \
+    --unicodes="U+0020-007A,U+00D6,U+00C4,U+00E4,U+00DC, U+00FC, U+00D6, U+00F6, U+00DF, U+00B0" \
+    --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap \
+    --notdef-glyph --notdef-outline --recommended-glyphs \
+    --name-IDs='*' --name-legacy --name-languages='*' \
+    --with-zopfli
+```
