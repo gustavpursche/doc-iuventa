@@ -28,7 +28,7 @@
       bottom: 0;
       color: white;
       left: 50%;
-      padding-bottom: .5rem;
+      padding-bottom: 3rem;
       padding-left: 1rem;
       padding-right: 1rem;
       padding-top: 2rem;
@@ -93,11 +93,11 @@
     }
 
     @include mq(desktop) {
-      padding-top: 2.5rem;
+      padding-top: 1.5rem;
     }
 
     &:before {
-      border-left: 2px solid currentColor;
+      //border-left: 2px solid currentColor;
       content: '';
       height: .8rem;
       position: absolute;
