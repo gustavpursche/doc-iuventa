@@ -28,7 +28,7 @@
       bottom: 0;
       color: white;
       left: 50%;
-      padding-bottom: 3rem;
+      padding-bottom: 2rem;
       padding-left: 1rem;
       padding-right: 1rem;
       padding-top: 2rem;
@@ -86,7 +86,6 @@
     display: block;
     font-size: 1rem;
     padding-top: 2rem;
-    position: relative;
 
     @include mq(tablet) {
       padding-top: .75rem;
@@ -94,23 +93,6 @@
 
     @include mq(desktop) {
       padding-top: 1.5rem;
-    }
-
-    &:before {
-      //border-left: 2px solid currentColor;
-      content: '';
-      height: .8rem;
-      position: absolute;
-      top: .8rem;
-      width: 0;
-
-      @include mq(tablet) {
-        display: none;
-      }
-
-      @include mq(desktop) {
-        display: inline-block;
-      }
     }
   }
 }
