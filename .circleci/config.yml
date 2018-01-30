@@ -24,6 +24,7 @@ jobs:
             ./configure
             make
             sudo make install
+            sudo ldconfig
       - run: npm install
       - save_cache:
           paths:
