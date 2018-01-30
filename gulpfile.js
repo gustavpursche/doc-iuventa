@@ -13,6 +13,7 @@ const gutil = require('gulp-util');
 const header = require('gulp-header');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
 const merge = require('merge-stream');
 const os = require('os');
 const parallelize = require('concurrent-transform');
@@ -353,14 +354,12 @@ gulp.task('images', () => {
         ))
         .pipe(parallelize(
           imagemin([
-            imagemin.jpegtran({
+            imageminMozjpeg({
               progressive: true,
+              quality: 75,
             }),
           ], {
             verbose: false,
-          }),
-          imagemin.optipng({
-            optimizationLevel: 5
           }),
           os.cpus().length
         ))
