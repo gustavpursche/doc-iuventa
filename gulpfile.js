@@ -23,6 +23,8 @@ const resize = require('gulp-image-resize')
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const striptags = require('striptags');
+const ttf2woff = require('gulp-ttf2woff');
+const ttf2woff2 = require('gulp-ttf2woff2');
 const { uniqueId } = require('lodash');
 const webpack = require('webpack');
 
@@ -380,8 +382,21 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('fonts', () => {
-  return gulp.src('assets/fonts/**/*')
-    .pipe(gulp.dest('dist/assets/fonts/'));
+  const source = 'assets/fonts/**/*';
+  const target = 'dist/assets/fonts/';
+
+  const ttf = gulp.src(source)
+    .pipe(gulp.dest(target));
+
+  const woff = gulp.src(source)
+    .pipe(ttf2woff())
+    .pipe(gulp.dest(target));
+
+  const woff2 = gulp.src(source)
+    .pipe(ttf2woff2())
+    .pipe(gulp.dest(target));
+
+  return merge(ttf, woff, woff2);
 });
 
 gulp.task('documents', () => {
