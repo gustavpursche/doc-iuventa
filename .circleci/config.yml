@@ -16,7 +16,10 @@ jobs:
           - v1-dependencies-
       - run:
           command: |
-            sudo apt-get install imagemagick
+            sudo apt-get -y -qq update
+            sudo apt-get -y -qq install python3.4-dev imagemagick
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
             sudo pip install fonttools
       - run: npm install
       - save_cache:
