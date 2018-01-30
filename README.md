@@ -28,3 +28,4 @@
 ## Fonts
 
 During the build step the fonts get subsetted. You have to have [fonttools](https://github.com/fonttools/fonttools) installed.
+
