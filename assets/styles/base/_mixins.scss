@@ -9,12 +9,12 @@
 @mixin small-italic {
   color: $color-boulder;
   font-family: $font-family-serif;
-  font-size: .85rem;
+  font-size: .95rem;
   font-style: italic;
   line-height: 1.45;
 
   @include mq(tablet) {
-    font-size: .75rem;
+    font-size: 1rem;
   }
 }
 

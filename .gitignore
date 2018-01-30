@@ -61,3 +61,4 @@ aws.json
 dist/*
 .awspublish-jib-cdn
 
+assets/fonts/*.ttf

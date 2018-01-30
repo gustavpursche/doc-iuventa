@@ -4,6 +4,7 @@ const awspublish = require('gulp-awspublish');
 const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
+const { exec } = require('child_process');
 const fs = require('fs');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
@@ -381,8 +382,80 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest('dist/assets/scripts/'));
 });
 
-gulp.task('fonts', () => {
-  const source = 'assets/fonts/**/*';
+gulp.task('fonts-subset', callback => {
+  const glyphs = {
+    'yrsa-regular': [
+      'U+0020-007A',
+      'U+00D6',
+      'U+00C4',
+      'U+00E4',
+      'U+00DC',
+      'U+00FC',
+      'U+00D6',
+      'U+00F6',
+      'U+00DF',
+      'U+201E',
+      'U+201D',
+    ],
+    'ubuntu-mono': [
+      'U+0020-007A',
+      'U+00D6',
+      'U+00C4',
+      'U+00E4',
+      'U+00DC',
+      'U+00FC',
+      'U+00D6',
+      'U+00F6',
+      'U+00DF',
+    ],
+    'open-sans-regular': [
+      'U+0020-007A',
+      'U+00D6',
+      'U+00C4',
+      'U+00E4',
+      'U+00DC',
+      'U+00FC',
+      'U+00D6',
+      'U+00F6',
+      'U+00DF',
+      'U+00B0',
+    ],
+    'open-sans-condensed-bold': [
+      'U+0020-007A',
+      'U+00D6',
+      'U+00C4',
+      'U+00E4',
+      'U+00DC',
+      'U+00FC',
+      'U+00D6',
+      'U+00F6',
+      'U+00DF',
+      'U+201E',
+      'U+201D',
+    ],
+  };
+
+  const pexec = fileName => {
+    return new Promise((resolve, reject) => {
+      exec(`
+        pyftsubset ./assets/fonts/source/${fileName}.ttf \
+            --output-file="./assets/fonts/${fileName}.ttf" \
+            --unicodes="${glyphs[fileName].join(',')}" \
+            --layout-features='*' --glyph-names --symbol-cmap --legacy-cmap \
+            --notdef-glyph --notdef-outline --recommended-glyphs \
+            --name-IDs='*' --name-legacy --name-languages='*' \
+            --with-zopfli
+      `, (err, stdout, stderr) => resolve());
+    });
+  };
+
+  const pexecs = Object.keys(glyphs).map(_ => pexec(_));
+
+  Promise.all(pexecs).then(() => callback(null));
+});
+
+gulp.task('fonts', ['fonts-subset'], () => {
+  const source = 'assets/fonts/*';
   const target = 'dist/assets/fonts/';
 
   const ttf = gulp.src(source)

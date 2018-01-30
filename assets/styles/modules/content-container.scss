@@ -31,6 +31,8 @@
   > p {
     color: $color-tundora;
     font-size: 1.3rem;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: tabular-nums;
     line-height: 1.4;
 
     @include mq(medium) {
