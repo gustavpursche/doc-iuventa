@@ -16,15 +16,8 @@ jobs:
           - v1-dependencies-
       - run:
           command: |
-            sudo apt-get -y -qq install autoconf automake libtool nasm make pkg-config git python-pip imagemagick
+            sudo apt-get -y -qq install python-pip imagemagick
             sudo pip install fonttools
-            git clone https://github.com/mozilla/mozjpeg.git
-            cd mozjpeg
-            autoreconf -fiv
-            ./configure
-            make
-            sudo make install
-            sudo ldconfig
       - run: npm install
       - save_cache:
           paths:
