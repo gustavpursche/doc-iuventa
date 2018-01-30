@@ -17,6 +17,7 @@ jobs:
       - run:
           command: |
             sudo apt-get install imagemagick
+            sudo pip install fonttools
       - run: npm install
       - save_cache:
           paths:
