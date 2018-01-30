@@ -1,6 +1,6 @@
 {
   "name": "doc-iuventa",
-  "version": "1.0.0-beta19",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
