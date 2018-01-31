@@ -206,7 +206,7 @@ gulp.task('markup', ['styles'], () => {
                   `,
               };
 
-              let avatar = email.from.includes('master.IUVENTA@telaurus.net') ? logos.iuventa : logos.mrcc;
+              let avatar = email.from.includes('@telaurus.net') ? logos.iuventa : logos.mrcc;
 
               threadMarkup += renderEmail({
                 id: uniqueId(),
