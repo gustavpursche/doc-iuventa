@@ -6,7 +6,6 @@
   "scripts": {
     "watch": "gulp watch",
     "build": "gulp build",
-    "publish": "ENV='production' gulp upload",
     "serve": "npx node-static -p 3001"
   },
   "repository": {
@@ -39,7 +38,7 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^2.0.2",

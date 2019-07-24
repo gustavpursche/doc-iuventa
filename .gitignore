@@ -57,8 +57,6 @@ typings/
 .env
 
 # project related
-aws.json
 dist/*
-.awspublish-jib-cdn
 
 assets/fonts/*.ttf
