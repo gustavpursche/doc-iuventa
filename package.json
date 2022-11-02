@@ -26,7 +26,7 @@
     "babel-runtime": "^6.23.0",
     "concurrent-transform": "^1.0.0",
     "core-js": "^2.5.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-awspublish": "^3.3.0",
     "gulp-cloudfront-invalidate": "^0.1.4",
